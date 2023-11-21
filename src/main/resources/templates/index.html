@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>인덱스</h1>
-</body>
+<html xmln:th="http://www.thymeleaf.org" 
+th:replace="~{common/layout :: commonLayout(~{this::head}, ~{this::main})}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<main>
+		<h1>인덱스</h1>
+	</main>
 </html>
