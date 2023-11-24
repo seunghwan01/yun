@@ -1,11 +1,127 @@
 <!DOCTYPE html>
-<html xmln:th="http://www.thymeleaf.org" 
-th:replace="~{common/layout :: commonLayout(~{this::head}, ~{this::main})}">
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-	</head>
-	<main>
-		<h1>인덱스</h1>
-	</main>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: commonLayout(~{this::head}, ~{this::main})}">
+
+<head>
+	<title>안녕</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
+	<script src="/js/index.js"></script>
+
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="/css/common/reset-css.css">
+	<link rel="stylesheet" href="/js/index.js">
+	<link rel="stylesheet" href="/css/index.css">
+</head>
+<main>
+	<section>
+		<div class="main_swiper">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="/img/index/co.jpeg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="/img/index/co1.jpeg" alt="">
+					</div>
+				</div>
+				<div class="main_nav">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+
+		<div class="sub_swiper">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="/img/index/cho2.JPG" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="/img/index/cho.jpeg" alt="">
+					</div>
+				</div>
+				<div class="sub_nav">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<script>
+			var MainSwiper = new Swiper('.main_swiper .swiper-container', {
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+					clickable: true,
+				},
+				loop: true,
+			});
+
+			var SubSwiper = new Swiper('.sub_swiper .swiper-container', {
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+					clickable: true,
+				},
+				loop: true,
+			});
+
+			MainSwiper.controller.control = SubSwiper;
+			SubSwiper.controller.control = MainSwiper;
+
+		</script>
+	</section>
+	<section class="flex between view-size aa">
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo.jpeg"></div>
+			<p>choco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo2.jpeg"></div>
+			<p>choco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo3.jpeg"></div>
+				<p>coco</p>
+			</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo4.jpeg"></div>
+			<p>coco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo5.jpeg"></div>
+			<p>coco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo6.jpeg"></div>
+			<p>coco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo7.jpeg"></div>
+			<p>coco</p>
+		</div>
+		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+			<div><img src="/img/index/hamo8.jpeg"></div>
+			<p>coco</p>
+		</div>
+	</section>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+</main>
+
+
 </html>
