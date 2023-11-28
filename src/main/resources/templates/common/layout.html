@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html xmln:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
 	<head>
-		
+		<link rel="stylesheet" href="/css/common/reset-css.css">
+		<link rel="stylesheet" href="/css/common/header-footer.css">
+		 <script type="text/javascript" src="/js/common/header.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<th:block th:replace="${head}">페이지마다 적용될 css,js resource</th:block>
 	</head>
 	<body>

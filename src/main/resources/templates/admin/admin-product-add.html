@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<th:block th:replace="~{common/admin-layout::head}" />
+		<link rel="stylesheet" href="/css/admin/product-add.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			function changedImg(element){
+				//console.log($(element)[0].files[0]);
+				
+				var formData = new FormData();
+				formData.append("goodsImg", $(element)[0].files[0]);
+				
+				$.ajax({
+					url:"/temp-upload",
+					data: formData,
+					type: "post",
+					contentType: false,
+					processData: false,
+					success: function(map){
+						//$(element).parents(".btn-file")
+						$(element).parent().css("background-image", `url(${map.url})`);
+						$(element).siblings(".tempKey").val(map.tempKey);
+						$(element).siblings(".orgName").val(map.orgName);
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<main class="flex">
+			<h1>관리자페이지</h1>
+			<th:block th:replace="~{common/admin-layout::admin-layout}" />
+			<h1>관리자 컨텐츠</h1>
+			<section class="admin-right">
+				<p>상품 등록</p>
+				<form class="pro-add" action="/productList" method="post" enctype="multipart/form-data">
+					<div class="flex">
+						<div>
+							<p>상품명</p>
+						</div>
+						<input type="text" name="name">
+					</div>
+					<div class="flex">
+						<div>
+							<p>상품가격</p>
+						</div>
+						<input type="text" name="price">
+					</div>
+					<div class="flex">
+						<div>
+							<p>재고</p>
+						</div>
+						<input type="text" name="stock">
+					</div>
+					<div class="flex no">
+						<div>
+							<p>대표 이미지</p>
+						</div>
+						<span class="file-wrap">
+							<label class="btn-file">
+								<input type="file"  accept="image/*" onchange="changedImg(this)">
+								<input type="hidden" class="tempKey" name="tempKey">
+								<input type="hidden" class="orgName" name="orgName">
+								<input type="hidden" class="check" name="checkImg" value="1">
+								<span>+</span>
+							</label>
+						</span>
+					</div>
+					<div class="flex">
+						<div>
+							<p>서브 이미지</p>
+						</div>
+						<span class="file-wrap2">
+						<label class="btn-file">
+							<input type="file"  accept="image/*" onchange="changedImg(this)">
+							<input type="hidden" class="tempKey" name="tempKey">
+							<input type="hidden" class="orgName" name="orgName">
+							<input type="hidden" class="check" name="checkImg" value="0">
+							<span>+</span>
+						</label>
+						</span>
+					</div>
+					<div class="flex no">
+						<div>
+							<p>상품설명</p>
+						</div>
+						<textarea name="content"></textarea>
+					</div>
+					<p>
+						<button>전송</button>
+					</p>
+				</form>
+			</section>
+		</main>
+	</body>
+</html>

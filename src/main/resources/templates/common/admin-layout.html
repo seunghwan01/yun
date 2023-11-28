@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="/css/admin/admin.css">
+		<link rel="stylesheet" href="/css/common/reset-css.css">
+	</head>
+	<body>
+		<section class="admin-left" th:fragment="admin-layout">
+			<section class="admin-logo">
+				<a href="/">
+					<img src="/img/common/harmony-logo.png">
+				</a>
+			</section>
+			<section class="admin-user">
+				<div>
+					<!--DB에서 로그인정보통해불러오기(환영합니다제외)-->
+					<div class="flex">
+						<p>관리자이름</p>
+						<p> 님 환영합니다.</p>
+					</div>
+					<p>이메일</p>
+					<button>로그아웃</button>
+				</div>
+			</section>
+			<section class="admin-list">
+				<button class="accordion"><span class="second_misolmi">상품관리</span></button>
+			    <div class="panel">
+			      <p><a href="/productList" class="second_misolmis">상품리스트</a></p>
+			      <p><a href="/productAdd" class="second_misolmis">상품등록</a></p>
+			    </div>
+			    <button class="accordion"><span class="second_misolmi">1111</span></button>
+			    <div class="panel">
+			      <p><span class="second_misolmis">22222</span></p>
+			    </div>
+			    <button class="accordion"><span class="second_misolmi">11111</span></button>
+			    <div class="panel">
+			      <p><span class="second_misolmis">22222</span></p>
+			    </div>
+			    <button class="accordion"><span class="second_misolmi">11111</span></button>
+			    <div class="panel">
+			      <p><span class="second_misolmis">22222</span></p>
+			    </div>
+			    <button class="accordion"><span class="second_misolmi">11111</span></button>
+			    <div class="panel">
+			      <p><span class="second_misolmis">222222</span></p>
+			    </div>
+			  </div>
+			</section>
+			<script>
+				var acc = document.getElementsByClassName("accordion");
+				var i;
+				
+				for (i = 0; i < acc.length; i++) {
+				  acc[i].addEventListener("click", function() {
+				    this.classList.toggle("active");
+				    var panel = this.nextElementSibling;
+				    if (panel.style.maxHeight) {
+				      panel.style.maxHeight = null;
+				    } else {
+				      panel.style.maxHeight = panel.scrollHeight + "px";
+				    }
+				  });
+				}
+			</script>
+			<section class="admin-foot">
+				<img src="/img/common/harmony-logo.png">
+			</section>
+			<p><a href="#">홈페이지로이동</a></p>
+		</section>
+	</body>
+</html>
