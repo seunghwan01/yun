@@ -1,6 +1,61 @@
 <!DOCTYPE html>
 <html xmln:th="http://www.thymeleaf.org">
 	<header>
-		헤더영역
+		<h1>헤더영역</h1>
+		<section>
+			<section class="view-size-pc head1 flex between">
+				<div onclick="openPop()" class="pc-none menu-trigger">
+					<span id="line1"></span>
+					<span id="line2"></span>
+					<span id="line3"></span>
+				</div>
+				<ul id="userList" class="flex-pc between-pc">
+					<div class="flex-pc user-tab between-pc">
+						<div class="flex-pc user-tab">
+							<div class="flex-pc before-log"><!--로그인전-->
+								<li><a href="#">로그인</a></li>
+								<li><a href="#">회원가입</a></li>
+								<li><a href="/admin">관리자페이지</a></li>
+							</div>
+							<div class="flex-pc after-log"><!--로그인후-->
+								<li><a href="#">회원이름</a></li>
+								<li><a href="#">로그아웃</a></li>
+							</div>
+						</div>
+						<div class="flex-pc other-tab">
+							<li><a href="#">마이하모니</a></li>
+							<li class="not"><a href="#">고객센터</a></li>
+						</div>
+					</div>
+				</ul>
+				<a href="/" class="logo">
+						<img src="/img/common/harmony-logo.png">
+				</a>
+			</section>
+			<section class="view-size-pc head2">
+				<form>
+					<input type="text" placeholder="검색어를 입력하세요">
+					<button></button>
+				</form>
+			</section>
+			<section id="list" class="view-size-pc head3">
+				<ul class="flex-pc">
+					<li><a href="/">홈</a></li>
+					<li><a href="/sub/best">베스트</a></li>
+					<li><a href="/sub/necklace">목걸이</a></li>
+					<li><a href="/sub/earring">귀걸이</a></li>
+					<li><a href="/sub/bracelet">팔찌</a></li>
+					<li><a href="/sub/ring">반지</a></li>
+					<li class="not user-center">
+						<a onclick="openUserTap()">고객센터</a>
+						<div id="userTap" class="user-tap">
+							<p><a class="user-center-tap" href="#">FAQ </a></p>
+							<p><a class="user-center-tap" href="#">공지사항 </a></p>
+							<p><a class="user-center-tap" href="#">1:1문의하기 </a></p>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</section>
 	</header>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="~{common/admin-layout::head}" />
+		<link rel="stylesheet" href="/css/admin/product-list.css">
+	</head>
+	<body>
+		<main class="flex">
+			<h1>관리자페이지</h1>
+			<th:block th:replace="~{common/admin-layout::admin-layout}" />
+			<h1>관리자 컨텐츠</h1>
+			<section class="admin-right list-right">
+				<p class="list-title">상품 리스트</p>
+				<div class="list-all">
+					<div class="flex between list list-name">
+						<p>번호</p>
+						<p>상품명</p>
+						<p>가격</p>
+						<p>재고</p>
+						<p>상품설명</p>
+					</div>
+					<a th:each="m :${list}" class="flex between list list-inner">
+						<p th:text="${m.no}">번호</p>
+						<p th:text="${m.title}">제목</p>
+						<p th:text="${m.price}">가격</p>
+						<p th:text="${m.stock}">재고</p>
+						<p th:text="${m.content}">상품설명</p>
+					</a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

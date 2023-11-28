@@ -18,6 +18,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 	color:#222;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -61,3 +62,18 @@ h1{
 .end{justify-content: end;}
 
 .between{justify-content: space-between;}
+
+@media screen and (min-width: 1366px){
+	.flex-pc{display: flex;}
+
+	.center-pc{justify-content: center;}
+	
+	.start-pc{justify-content: start;}
+	
+	.end-pc{justify-content: end;}
+	
+	.between-pc{justify-content: space-between;}
+	.view-size-pc{
+		width:1200px; margin:0 auto;
+	}
+}
