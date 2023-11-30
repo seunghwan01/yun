@@ -1,23 +1,40 @@
 package com.nowon.cho.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.nowon.cho.domain.dto.MemberDTO;
+import com.nowon.cho.domain.entity.MemberEntityRepository;
+import com.nowon.cho.service.MemberService;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+//	MemberEntityRepository repo;
+	MemberService memservice;
 
-	@GetMapping("/users/login")
+	@GetMapping("/login")
 	public String login() {
-		return "/users/login";
+		return "users/login";
 	}
 	
-	@GetMapping("/users/signup")
+	@GetMapping("/signup")
 	public String signup() {
-		return "/users/signup";
+		return "users/signup";
 	}
 	
-	@GetMapping("/users/signupagree")
+	@GetMapping("/signupagree")
 	public String signupagree() {
-		return "/users/signupagree";
+		return "users/signupagree";
+	}
+	
+	@PostMapping("/signup")
+		public String signup(@ModelAttribute MemberDTO dto) {
+		memservice.save(dto);
+		return "redirect:/";
 	}
 }

@@ -5,26 +5,26 @@
 		<link rel="stylesheet" href="/css/users/signup.css" />
 		<script type="text/javascript" src="/js/users/signup.js"></script>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Harmony 회원가입</title>
 	</head>
 	<body>
 		<div class="signup-layout">
 			<div class="signup-menu">
 				<div class="signup-menu-1">
 					<span>
-						<img src="/img/index/harmony-logo.png" class="signup-logo">
+						<img src="/img/common/harmony-logo.png" class="signup-logo">
 					</span>
 					<div class="signup-text1">
 						Harmony 통합회원 가입
 					</div>
-					<form>
+					<form action="/signup" method="post">
 						<div class="e-form">
 							<div class="e-form-1">
 								이메일아이디
 							</div>
 							<div class="input-b">
-								<input type="text" class="email" placeholder="이메일 주소를 입력해주세요">
-								<button class="againcheck">증복확인</button>
+								<input type="text" class="email" placeholder="이메일 주소를 입력해주세요" name="email">
+								<button class="againcheck">중복확인</button>
 							</div>
 						</div>
 						<div class="p-form">
@@ -32,7 +32,7 @@
 								비밀번호
 							</div>
 							<div>
-								<input type="password" class="password" placeholder="비밀번호를 입력해주세요">
+								<input type="password" class="password" placeholder="비밀번호를 입력해주세요" name="pass">
 							</div>
 						</div>
 						<div class="pa-form">
@@ -40,7 +40,7 @@
 								비밀번호 확인
 							</div>
 							<div>
-								<input type="password" class="password-a" placeholder="비밀번호를 다시 입력해주세요">
+								<input type="password" class="password-a" placeholder="비밀번호를 다시 입력해주세요" name="dummy">
 							</div>
 						</div>
 						<div class="n-form">
@@ -48,7 +48,7 @@
 								이름
 							</div>
 							<div>
-								<input type="text" class="name" placeholder="이름을 입력해주세요">
+								<input type="text" class="name" placeholder="이름을 입력해주세요" name="name">
 							</div>
 						</div>
 						<div class="phone-form">
@@ -56,81 +56,15 @@
 								전화번호
 							</div>
 							<div>
-								<input type="text" class="phone" placeholder="전화번호를 입력해주세요">
+								<input type="text" class="phone" placeholder="전화번호를 입력해주세요" name="phone">
 							</div>
 						</div>
-					</form>
 					<div class="signup-menu-2">
-						<div>
-							<div class="check">
-								약관 동의
-							</div>
-						</div>
-						<div>
-							<div class="agree1">
-								<div class="checkboxmenu1">
-									<input type="checkbox" id="checkbox1" name="all" value='selectall' onclick='selectAll(this)'>
-									<label for="checkbox1">Harmony 이용약관 전체동의</label>
-								</div>
-								<div class="step-box">
-									<div >
-										<input type="checkbox" id="checkbox2" name="a-check1" onclick="allChecked()">
-										<label for="checkbox2">(필수) Harmony 이용약관</label>
-										<a onclick="modal1()" id="open-modal">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox3" name="a-check1" onclick="allChecked()">
-										<label for="checkbox3">(필수) 개인정보의 필수적인 사항에 대한 수집 이용 동의</label>
-										<a href="#">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox4" name="a-check1" onclick="allChecked()">
-										<label for="checkbox4">(필수) 개인정보의 필수적인 제 3자 제공에 대한 동의</label>
-										<a href="#">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox5" name="a-check1" onclick="allChecked()">
-										<label for="checkbox5">(선택) 개인정보의 선택적인 사항에 대한 수집 이용 동의</label>
-										<a href="#">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox6" name="a-check1" onclick="allChecked()">
-										<label for="checkbox6">(선택) 개인정보의 선택적인 제 3자 제공에 대한 동의</label>
-										<a href="#">보기</a>
-									</div>
-									<div class="last">
-										· L.POINT 선택약관에 동의하시면 DM쿠폰발송, 백화점 MVG 선정 등 다양한 혜택을<br>경험하실 수 있습니다.
-									</div>
-								</div>
-							</div>
-							<div class="agree1">
-								<div class="checkboxmenu1">
-									<input type="checkbox" id="checkbox7" name="all2" value='selectall2' onclick="allChecked2()">
-									<label for="checkbox7">H Point 이용약관 전체동의</label>
-								</div>
-								<div class="step-box">
-									<div >
-										<input type="checkbox" id="checkbox8" name="a-check2" onclick="allChecked2()">
-										<label for="checkbox8">(필수) Harmony쇼핑 이용약관</label>
-										<a href="#">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox9" name="a-check2" onclick="allChecked2()">
-										<label for="checkbox9">(필수) 개인정보 수집 및 이용 동의</label>
-										<a href="#">보기</a>
-									</div>
-									<div >
-										<input type="checkbox" id="checkbox10" name="a-check2" onclick="allChecked2()">
-										<label for="checkbox10">(선택) 옴니서비스 정보 제공·활용 동의</label>
-										<a href="#">보기</a>
-									</div>
-								</div>
-							</div>
-						</div>
 						<div class="signup-b">
-							<button>가입 완료</button>
+							<input type="submit" value="가입 완료">
 						</div>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
