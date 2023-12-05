@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.nowon.cho.domain.dto.MemberDTO;
+import com.nowon.cho.domain.entity.MemberEntity;
 import com.nowon.cho.domain.entity.MemberEntityRepository;
 import com.nowon.cho.service.MemberService;
 
@@ -37,4 +40,5 @@ public class UserController {
 		memservice.save(dto);
 		return "redirect:/";
 	}
+	
 }

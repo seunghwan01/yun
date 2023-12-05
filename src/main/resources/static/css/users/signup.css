@@ -85,7 +85,7 @@ input{
 	border-radius: 8px;
 	border:1px solid #868e96;
 }
-.againcheck{
+#checkEmail{
 	background-color: #564c42;
 	color: white;
 	border-radius: 8px;

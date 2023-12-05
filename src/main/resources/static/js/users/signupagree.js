@@ -127,3 +127,17 @@ function modalc8(){
 	document.getElementById('modal8').style.opacity="0";
 	document.getElementById('modal8').style.visibility="hidden";
 }
+ function validateForm() {
+      var checkbox2Checked = document.getElementById('checkbox2').checked;
+      var checkbox3Checked = document.getElementById('checkbox3').checked;
+      var checkbox4Checked = document.getElementById('checkbox4').checked;
+      var checkbox8Checked = document.getElementById('checkbox8').checked;
+      var checkbox9Checked = document.getElementById('checkbox9').checked;
+
+      if (!checkbox2Checked || !checkbox3Checked || !checkbox4Checked || !checkbox8Checked || !checkbox9Checked) {
+        alert('필수 동의 사항에 모두 동의해주세요.');
+      } else {
+        alert('모든 필수 동의 사항에 동의하셨습니다. 다음 페이지로 이동합니다.');
+        window.location.href = '/signup'; 
+      }
+    }
