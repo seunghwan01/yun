@@ -2,14 +2,72 @@
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
 	<head>
 		<link rel="stylesheet" href="/css/common/reset-css.css">
-		<link rel="stylesheet" href="/css/common/header-footer.css">
+		
 		 <script type="text/javascript" src="/js/common/header.js"></script>
+		 <script type="text/javascript" src="/js/common/layout.js"></script>
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<th:block th:replace="${head}">페이지마다 적용될 css,js resource</th:block>
+		<link rel="stylesheet" href="/css/common/header-footer.css">
 	</head>
 	<body>
 		<th:block th:replace="~{common/header}">header섹션 적용</th:block>
 		<th:block th:replace="${main}">main섹션 적용</th:block>
 		<th:block th:replace="~{common/footer}">footer섹션 적용</th:block>
+		<aside>
+			<div class="chat-bot-icon flex center">
+				<a href="#" id="kart"></a>
+			</div>
+			<span></span>
+			<div class="chat-bot-icon flex center" id="open-chat" onclick="openChat()">
+				<div id="chat-robot"></div>
+			</div>
+			<span></span>
+			<div class="go-up flex center" id="go-up">
+				<img src="/img/common/aside/up.svg">
+			</div>
+		</aside>
+		<script>
+			document.getElementById('go-up').addEventListener('click', () => {
+			  window.scrollTo({
+			    top: 0,
+			    left: 0,
+			    behavior: 'smooth'
+			  });
+			})
+		</script>
+		<div class="wrap">
+			<section id="conversation">
+				<h1>대화화면</h1>
+				<div class="wrap view-size">
+					<div class="container" id="bot-contatner">
+						<div class="c-header flex between col-center">
+							<p class="help flex col-center"><span>HELP</span></p>
+							<p><b>하모니챗봇</b></p>
+							<p class="close flex end col-center">
+								<span id="close-chat" onclick="closeChat()"></span>
+							</p>
+						</div>
+						<div class="c-content" >
+							<div class="chat-bot-area flex" id="chat-content">
+								<div class="chat-bot-area-box flex center col-center">
+									<p class="chat-bot-icon"></p>
+								</div>
+								<p>안녕하세요</p>
+							</div>
+							<div class="user-area flex end">
+								<p>회원가입 문의</p>
+							</div>
+						</div>
+						<div class="c-question flex col-center">
+							<p class="c-home"></p>
+							<div class="c-question-area">
+								<input type="text" placeholder="질문을 입력하세요">
+								<button class="c-up flex col-center center"><span></span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</body>
 </html>

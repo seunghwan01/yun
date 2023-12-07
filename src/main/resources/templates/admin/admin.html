@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html>
-	<th:block th:replace="~{common/admin-layout::head}" />
+	<head>
+		<th:block th:replace="~{common/admin-layout::head}" />
+		<link rel="stylesheet" href="/css/admin/admin.css">
+	</head>
 	<body>
 		<main class="flex">
 			<h1>관리자페이지</h1>
 			<th:block th:replace="~{common/admin-layout::admin-layout}" />
 			<h1>관리자 컨텐츠</h1>
-			<section class="admin-right">
-				<p>sss</p>
+			<section class="admin-right admin-main flex between">
+				<div>
+					<div>
+						<p>일일 매출</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>월간 매출</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>리뷰 갯수</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>일일 방문자</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>월간 방문자</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>전체 상품수</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>배송 대기건</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>배송 중</p>
+						<p>0건</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>배송 완료건</p>
+						<p>0건</p>
+					</div>
+				</div>
 			</section>
 		</main>
 	</body>
