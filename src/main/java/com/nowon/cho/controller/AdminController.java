@@ -30,5 +30,25 @@ public class AdminController {
 	public String productAdd() {
 		return "admin/admin-product-add";
 	}
+	@GetMapping("/mainBannerAdd")
+	public String mainBannerAdd() {
+		return "admin/admin-main-banner-add";
+	}
+	@GetMapping("/mainBannerList")
+	public String mainBannerList() {
+		return "admin/admin-main-banner-list";
+	}
+	@GetMapping("/before-delivery")
+	public String beforeDlivery() {
+		return "admin/before-delivery";
+	}
+	@GetMapping("/ing-delivery")
+	public String ingDlivery() {
+		return "admin/ing-delivery";
+	}
+	@GetMapping("/after-delivery")
+	public String afterDlivery() {
+		return "admin/after-delivery";
+	}
 	
 }

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmln:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link rel="stylesheet" href="/css/admin/admin.css">
+		<link rel="stylesheet" href="/css/admin/admin-layout.css">
 		<link rel="stylesheet" href="/css/common/reset-css.css">
 	</head>
 	<body>
 		<section class="admin-left" th:fragment="admin-layout">
 			<section class="admin-logo">
-				<a href="/">
+				<a href="/admin">
 					<img src="/img/common/harmony-logo.png">
 				</a>
 			</section>
@@ -30,22 +30,18 @@
 			      <p><a href="/productList" class="second_misolmis">상품리스트</a></p>
 			      <p><a href="/productAdd" class="second_misolmis">상품등록</a></p>
 			    </div>
-			    <button class="accordion"><span class="second_misolmi">1111</span></button>
+			    <button class="accordion"><span class="second_misolmi">홈페이지관리</span></button>
 			    <div class="panel">
-			      <p><span class="second_misolmis">22222</span></p>
+					<p><a href="/mainBannerList" class="second_misolmis">메인배너 리스트</a></p>
+			     	<p><a href="/mainBannerAdd" class="second_misolmis">메인배너 등록</a></p>
 			    </div>
-			    <button class="accordion"><span class="second_misolmi">11111</span></button>
+			    <button class="accordion"><span class="second_misolmi">배송관리</span></button>
 			    <div class="panel">
-			      <p><span class="second_misolmis">22222</span></p>
+			      <p><a href="/before-delivery" class="second_misolmis">배송 전</a></p>
+			      <p><a href="/ing-delivery" class="second_misolmis">배송 중</a></p>
+			      <p><a href="/after-delivery" class="second_misolmis">배송 완료</a></p>
 			    </div>
-			    <button class="accordion"><span class="second_misolmi">11111</span></button>
-			    <div class="panel">
-			      <p><span class="second_misolmis">22222</span></p>
-			    </div>
-			    <button class="accordion"><span class="second_misolmi">11111</span></button>
-			    <div class="panel">
-			      <p><span class="second_misolmis">222222</span></p>
-			    </div>
+			    <button class="accordion"><a href="/" class="second_misolmi">홈페이지로이동</a></button>
 			  </div>
 			</section>
 			<script>
@@ -67,7 +63,6 @@
 			<section class="admin-foot">
 				<img src="/img/common/harmony-logo.png">
 			</section>
-			<p><a href="#">홈페이지로이동</a></p>
 		</section>
 	</body>
 </html>

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<th:block th:replace="~{common/admin-layout::head}" />
 		<link rel="stylesheet" href="/css/admin/product-add.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script>
+			
+			
 			function changedImg(element){
 				//console.log($(element)[0].files[0]);
-				
+				var idx=$(element).index();
+				console.log("idx: "+idx);
 				var formData = new FormData();
 				formData.append("goodsImg", $(element)[0].files[0]);
+				
+				
 				
 				$.ajax({
 					url:"/temp-upload",
@@ -22,6 +27,47 @@
 						$(element).parent().css("background-image", `url(${map.url})`);
 						$(element).siblings(".tempKey").val(map.tempKey);
 						$(element).siblings(".orgName").val(map.orgName);
+						$(".main-img-plus").remove();
+					}
+				});
+			}
+			function changedImgSub(element){
+				//console.log($(element)[0].files[0]);
+				var idx=parseInt($(element).attr("idx"));
+				//console.log("idx: "+idx);
+				//console.log($(".upload-sub-img").length);
+				var formData = new FormData();
+				formData.append("goodsImg", $(element)[0].files[0]);
+				let num = $(".upload-sub-img").index(this);
+				var tag=`
+				<span class="file-wrap2 upload-sub-img">
+					<label class="btn-file">
+						<input type="file"  accept="image/*" idx="${idx+1}" onchange="changedImgSub(this)">
+						<input type="hidden" class="tempKey" name="tempKey">
+						<input type="hidden" class="orgName" name="orgName">
+						<input type="hidden" class="check" name="checkImg" value="0">
+						<span>+</span>
+					</label>
+				</span>
+				`
+				
+				$.ajax({
+					url:"/temp-upload",
+					data: formData,
+					type: "post",
+					contentType: false,
+					processData: false,
+					success: function(map){
+						//$(element).parents(".btn-file")
+						$(element).parent().css("background-image", `url(${map.url})`);
+						$(element).siblings(".tempKey").val(map.tempKey);
+						$(element).siblings(".orgName").val(map.orgName);
+						$(".img-plus").remove();
+						if($(".upload-sub-img").length<8 && ($(".upload-sub-img").length==idx)){
+							$(".sub-img").append(tag);
+						}else if($(".upload-sub-img").length>=8){
+							alert("서브이미지저장은 8장까지입니다!");
+						}
 					}
 				});
 			}
@@ -29,11 +75,10 @@
 	</head>
 	<body>
 		<main class="flex">
-			<h1>관리자페이지</h1>
+			<h1>상품 추가</h1>
 			<th:block th:replace="~{common/admin-layout::admin-layout}" />
-			<h1>관리자 컨텐츠</h1>
 			<section class="admin-right">
-				<p>상품 등록</p>
+				<p class="admin-title">상품 등록</p>
 				<form class="pro-add" action="/productList" method="post" enctype="multipart/form-data">
 					<div class="flex">
 						<div>
@@ -63,22 +108,23 @@
 								<input type="hidden" class="tempKey" name="tempKey">
 								<input type="hidden" class="orgName" name="orgName">
 								<input type="hidden" class="check" name="checkImg" value="1">
-								<span>+</span>
+								<span class="main-img-plus">+</span>
 							</label>
 						</span>
 					</div>
-					<div class="flex">
+					
+					<div class="flex sub-img">
 						<div>
 							<p>서브 이미지</p>
 						</div>
-						<span class="file-wrap2">
-						<label class="btn-file">
-							<input type="file"  accept="image/*" onchange="changedImg(this)">
-							<input type="hidden" class="tempKey" name="tempKey">
-							<input type="hidden" class="orgName" name="orgName">
-							<input type="hidden" class="check" name="checkImg" value="0">
-							<span>+</span>
-						</label>
+						<span class="file-wrap2 upload-sub-img">
+							<label class="btn-file">
+								<input type="file"  accept="image/*" idx="1" onchange="changedImgSub(this)">
+								<input type="hidden" class="tempKey" name="tempKey">
+								<input type="hidden" class="orgName" name="orgName">
+								<input type="hidden" class="check" name="checkImg" value="0">
+								<span>+</span>
+							</label>
 						</span>
 					</div>
 					<div class="flex no">
