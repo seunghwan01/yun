@@ -48,12 +48,96 @@ function allChecked2() {
 }
 
 function modal1(){
-	document.getElementById('modal').style.opacity="1";
-	document.getElementById('modal').style.visibility="visible";
+	document.getElementById('modal1').style.opacity="1";
+	document.getElementById('modal1').style.visibility="visible";
 	document.body.style.overflowY="hidden";
 	document.body.style.position="relative";
 }
-function modalc(){
-	document.getElementById('modal').style.opacity="0";
-	document.getElementById('modal').style.visibility="hidden";
+function modalc1(){
+	document.getElementById('modal1').style.opacity="0";
+	document.getElementById('modal1').style.visibility="hidden";
 }
+function modal2(){
+	document.getElementById('modal2').style.opacity="1";
+	document.getElementById('modal2').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc2(){
+	document.getElementById('modal2').style.opacity="0";
+	document.getElementById('modal2').style.visibility="hidden";
+}
+function modal3(){
+	document.getElementById('modal3').style.opacity="1";
+	document.getElementById('modal3').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc3(){
+	document.getElementById('modal3').style.opacity="0";
+	document.getElementById('modal3').style.visibility="hidden";
+}
+function modal4(){
+	document.getElementById('modal4').style.opacity="1";
+	document.getElementById('modal4').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc4(){
+	document.getElementById('modal4').style.opacity="0";
+	document.getElementById('modal4').style.visibility="hidden";
+}
+function modal5(){
+	document.getElementById('modal5').style.opacity="1";
+	document.getElementById('modal5').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc5(){
+	document.getElementById('modal5').style.opacity="0";
+	document.getElementById('modal5').style.visibility="hidden";
+}
+function modal6(){
+	document.getElementById('modal6').style.opacity="1";
+	document.getElementById('modal6').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc6(){
+	document.getElementById('modal6').style.opacity="0";
+	document.getElementById('modal6').style.visibility="hidden";
+}
+function modal7(){
+	document.getElementById('modal7').style.opacity="1";
+	document.getElementById('modal7').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc7(){
+	document.getElementById('modal7').style.opacity="0";
+	document.getElementById('modal7').style.visibility="hidden";
+}
+function modal8(){
+	document.getElementById('modal8').style.opacity="1";
+	document.getElementById('modal8').style.visibility="visible";
+	document.body.style.overflowY="hidden";
+	document.body.style.position="relative";
+}
+function modalc8(){
+	document.getElementById('modal8').style.opacity="0";
+	document.getElementById('modal8').style.visibility="hidden";
+}
+ function validateForm() {
+      var checkbox2Checked = document.getElementById('checkbox2').checked;
+      var checkbox3Checked = document.getElementById('checkbox3').checked;
+      var checkbox4Checked = document.getElementById('checkbox4').checked;
+      var checkbox8Checked = document.getElementById('checkbox8').checked;
+      var checkbox9Checked = document.getElementById('checkbox9').checked;
+
+      if (!checkbox2Checked || !checkbox3Checked || !checkbox4Checked || !checkbox8Checked || !checkbox9Checked) {
+        alert('필수 동의 사항에 모두 동의해주세요.');
+      } else {
+        alert('모든 필수 동의 사항에 동의하셨습니다. 다음 페이지로 이동합니다.');
+        window.location.href = '/signup'; 
+      }
+    }

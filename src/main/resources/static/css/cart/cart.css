@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.mainarea{
+	width: 1140px;
+	height: 1200px;
+	padding-top: 45px;
+	padding-bottom: 120px;
+	margin: 0 auto;
+}
+h2{
+	padding-top: 15px;
+    margin-bottom: 30px;
+    font-size: 36px;
+    line-height: 52px;
+    letter-spacing: -1.1px;
+    text-align: center;
+}
+.cartarea{
+	height: 850px;
+}
+.carttabarea{
+	height: 58px;
+}
+.carttab{
+	width: 570px;
+	height: 58px;
+	border: 1px solid black;
+	align-items: center;
+}
+.cartarea a{
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+.contentarea{
+	height: 750px;
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+.goodsarea{
+	width: 790px;
+	height: 500px;
+}
+.deliveryarea{
+	width: 790px;
+	height: 47px;
+	padding-top: 3px;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #a9a9a9;
+	margin-bottom: 40px;
+}
+.delivery{
+	align-items: center;
+}

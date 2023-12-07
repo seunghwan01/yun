@@ -1,12 +1,3 @@
-//function selectAll(selectAll)  {
-//  const checkboxes 
-//       = document.getElementsByName('a-check1');
-//  
-//  checkboxes.forEach((checkbox) => {
-//    checkbox.checked = selectAll.checked;
-//  })
-//}
-
 function selectAll(selectAll) {
 
     const checkboxes = document.getElementsByName("a-check1")
@@ -55,4 +46,51 @@ function allChecked2() {
     }
 
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+	
+	var form = document.querySelector("form");
+
+	form.addEventListener("submit", function (event) {
+		var email = document.querySelector(".email").value;
+		var password = document.querySelector(".password").value;
+		var passworda = document.querySelector(".password-a").value;
+		var name = document.querySelector(".name").value;
+		var phone = document.querySelector(".phone").value;
+		var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+		var errorMessage = "";
+
+		if(!reg_email.test){
+			errorMessage += "이메일 형식이 잘못되었습니다.\n";
+		}
 		
+		if (!email.trim()) {
+			errorMessage += "이메일을 작성하지 않았습니다.\n";
+		}
+
+		if (!password.trim()) {
+			errorMessage += "비밀번호를 작성하지 않았습니다.\n";
+		}
+
+		if (password.trim()!=passworda.trim()){
+			errorMessage += "비밀번호가 맞지 않습니다.\n"
+		}
+
+		if (!name.trim()) {
+			errorMessage += "이름을 작성하지 않았습니다.\n";
+}
+
+		if (!phone.trim()) {
+			errorMessage += "전화번호를 작성하지 않았습니다.\n";
+		}
+		if (!email.trim() || !password.trim() || !name.trim() || !phone.trim()) {
+			errorMessage = "모든 요소를 작성해주세요.\n";
+		}
+
+		if (errorMessage) {
+			alert(errorMessage);
+			event.preventDefault();
+		}
+	});
+});

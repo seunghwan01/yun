@@ -15,9 +15,13 @@
 	height: auto;
 }
 .signup-text1{
+	text-align: center;
+	border-bottom: 1px solid black;
 	font-size: 34px;
 	padding-top: 10px;
-	text-align: center;
+	margin-top: 15px;
+	padding-bottom: 16px;
+	margin-bottom: 30px;
 }
 .signup-menu-1{
 	margin: 60px 0px 28px;
@@ -81,7 +85,7 @@ input{
 	border-radius: 8px;
 	border:1px solid #868e96;
 }
-.againcheck{
+#checkEmail{
 	background-color: #564c42;
 	color: white;
 	border-radius: 8px;
@@ -90,7 +94,7 @@ input{
 	height: 45px;
 }
 .signup-menu-2{
-	padding-top: 70px;
+	padding-top: 30px;
 }
 .check{
 	font-size: 25px;
@@ -144,7 +148,7 @@ label{
 .signup-b{
 	padding-top: 10px;
 }
-.signup-b button{
+.signup-b input[type="submit"]{
 	width: 530px;
 	height: 50px;
 	border-radius: 8px;
@@ -156,4 +160,9 @@ label{
 }
 .signup-b button:hover{
 	background-color: indianred;
+}
+input:focus{
+/*	border-color: pink;*/
+	border: 1.9px solid pink;
+	outline: none;
 }
