@@ -1,135 +1,142 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: commonLayout(~{this::head}, ~{this::main})}">
 
 <head>
-	<title>안녕</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-	<link rel="stylesheet" href="/css/common/reset-css.css">
-	<link rel="stylesheet" href="/css/index.css">
+    <title>안녕</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="/css/common/reset-css.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <main>
-	<section>
-		<div class="main_swiper">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<a href="#"><img src="/img/index/co.jpeg" alt=""></a>
-					</div>
-					<div class="swiper-slide">
-						<img src="/img/index/co1.jpeg" alt="">
-					</div>
-				</div>
-				<div class="main_nav">
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
-	</section>
-	<section>
-		<div class="sub_swiper">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<img src="/img/index/cho2.jpg" alt="">
-					</div>
-					<div class="swiper-slide">
-						<img src="/img/index/cho.jpeg" alt="">
-					</div>
-				</div>
-				<div class="sub_nav">
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
-				</div>
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
-		<script>
-			var MainSwiper = new Swiper('.main_swiper .swiper-container', {
-				autoplay: {
-					delay: 2000,
-					disableOnInteraction: false,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					type: 'bullets',
-					clickable: true,
-				},
-				loop: true,
-			});
-
-			var SubSwiper = new Swiper('.sub_swiper .swiper-container', {
-				autoplay: {
-					delay: 2000,
-					disableOnInteraction: false,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				pagination: {
-					el: '.swiper-pagination',
-					type: 'bullets',
-					clickable: true,
-				},
-				loop: true,
-			});
-
-			MainSwiper.controller.control = SubSwiper;
-			SubSwiper.controller.control = MainSwiper;
-
-		</script>
-	</section>
-	<div id="h1-name">인기 아이템</div>
-	<section class="flex between view-size aa">
-		<div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo.jpeg" alt=""></div>
-			<p>choco</p>
-		</div>
-		<div class="item" data-aos="fade-down" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo2.jpeg" alt=""></div>
-			<p>choco</p>
-		</div>
-		<div class="item" data-aos="fade-right" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo3.jpeg" alt=""></div>
-				<p>coco</p>
-			</div>
-		<div class="item" data-aos="fade-left" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo4.jpeg" alt=""></div>
-			<p>coco</p>
-		</div>
-		<div class="item" data-aos="fade-in" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo5.jpeg" alt=""></div>
-			<p>coco</p>
-		</div>
-		<div class="item" data-aos="fade-out" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo6.jpeg" alt=""></div>
-			<p>coco</p>
-		</div>
-		<div class="item" data-aos="flip-right" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo7.jpeg" alt=""></div>
-			<p>coco</p>
-		</div>
-		<div class="item" data-aos="flip-left" data-aos-easing="ease-in-sine">
-			<div><img src="/img/index/hamo8.jpeg" alt=""></div>
-			<p>coco</p>
-		</div>
-	</section>
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-	<script>
-		AOS.init();
-	</script>
+    <section class="view-size between">
+        <div class="main_swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="/img/index/main4.jpeg" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/index/main3.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="main_nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section class="view-size between">
+        <div class="sub_swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/img/index/main1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/img/index/main2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="sub_nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/index.js"></script>
+    </section>
+    <div id="h1-name">Harmony</div>
+    <section></section>
+    <section class="flex between view-size aa">
+        <div class="item" data-aos="fade-up" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="fade-down" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo2.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="fade-right" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo3.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="fade-left" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo4.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="fade-in" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo5.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="fade-out" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo6.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="flip-right" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo7.jpeg" alt=""></div>
+            </a>
+        </div>
+        <div class="item" data-aos="flip-left" data-aos-easing="ease-in-sine">
+            <a href="#">
+                <div><img src="/img/index/hamo8.jpeg" alt=""></div>
+            </a>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <section class="final-slide">
+        <h2></h2>
+        <div class="swiper-container2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br1.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring11.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br13.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring15.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck3.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er13.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring4.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er12.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring7.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er6.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br3.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck9.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er6.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br6.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck1.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er17.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck2.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br4.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring13.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br7.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck15.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring2.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck6.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/bracelet/br2.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/ring/ring14.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/necklace/neck13.jpeg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="/img/sub/earring/er2.jpeg" alt=""></a></div>
+            </div>
+            <div class="swiper-button-next btn2-next"></div>
+            <div class="swiper-button-prev btn2-prev"></div>
+        </div>
+    </section>
 </main>
-
-
 </html>
-
