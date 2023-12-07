@@ -57,9 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		var passworda = document.querySelector(".password-a").value;
 		var name = document.querySelector(".name").value;
 		var phone = document.querySelector(".phone").value;
+		var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 
 		var errorMessage = "";
 
+		if(!reg_email.test){
+			errorMessage += "이메일 형식이 잘못되었습니다.\n";
+		}
+		
 		if (!email.trim()) {
 			errorMessage += "이메일을 작성하지 않았습니다.\n";
 		}
