@@ -1,5 +1,11 @@
 @charset "UTF-8";
-
+.head3 ul>:nth-child(1) a:not(.user-center-tap) {
+    font-weight: normal !important;
+    color: #aaa !important;
+}
+.head3 ul>:nth-child(1) a:hover:not(.user-center-tap) {
+    color:black !important;
+}
 main>.wrap {
 	width: 1200px;
 	margin: 0 auto;

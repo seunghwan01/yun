@@ -11,11 +11,24 @@ a {
 }
 
 /*라이브러리*/
+@media screen and (min-width: 1366px){
+	.head3 ul>:nth-child(1) a:not(.user-center-tap) {
+	    font-weight: normal !important;
+	    color: #aaa !important;
+	}
+	.head3 ul>:nth-child(1) a:hover:not(.user-center-tap) {
+	    color:black !important;
+	}
+}
 
+main{
+	background: #eee;
+}
 .con {
     margin-left: auto;
     margin-right: auto;
     max-width: 1000px;
+    
 }
 
 .cell {
@@ -36,6 +49,7 @@ a {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    
 }
 
 .bn-box {
@@ -156,9 +170,8 @@ body {
 }
 
 body {
-    background: #eee;
+    
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
