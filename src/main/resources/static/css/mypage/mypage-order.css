@@ -14,3 +14,6 @@
 	font-weight: bold;
 	color:#aaa;
 }
+.mypage-main .mypage-left> :nth-child(2){
+	font-weight: bold;
+}

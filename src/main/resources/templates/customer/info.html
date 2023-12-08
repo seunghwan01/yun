@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<th:block th:fragment="common-head">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: commonLayout(~{this::head}, ~{this::main})}">
+<head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/css/common/reset-css.css">
 	<link rel="stylesheet" href="/css/customer/info.css">
-</th:block>
+	<style>
+		.head3 ul>:nth-child(7) a:not(.user-center-tap) {
+		    font-weight: bold;
+		    color: black;
+		}
+	</style>
+</head>
 
 <body>
 	<main>
@@ -14,11 +20,11 @@
 					<li>고객센터</li>
 				</ul>
 				<ul class="CS2">
-					<li><a href="#" style="text-decoration-line: none;">- 쇼핑 FAQ</a></li>
+					<li><a href="/faq">쇼핑 FAQ</a></li>
 					<hr color="silver" size="1px">
-					<li><a href="#" style="text-decoration-line: none;">- 공지사항</a></li>
+					<li><a href="/info">공지사항</a></li>
 					<hr color="silver" size="1px">
-					<li><a href="#" style="text-decoration-line: none;">- 1:1 문의하기</a></li>
+					<li><a href="/qna">1:1 문의하기</a></li>
 				</ul>
 				<ul class="CS3">
 					<div>하모니ON 고객센터</div>

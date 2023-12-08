@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.nowon.cho.domain.dto.MemberDTO;
-import com.nowon.cho.domain.entity.MemberEntity;
-import com.nowon.cho.domain.entity.MemberEntityRepository;
-import com.nowon.cho.service.MemberService;
+//import com.nowon.cho.domain.dto.MemberDTO;
+//import com.nowon.cho.domain.entity.MemberEntity;
+//import com.nowon.cho.domain.entity.MemberEntityRepository;
+//import com.nowon.cho.service.MemberService;
 
 @Controller
 public class UserController {
 	
 	@Autowired
 //	MemberEntityRepository repo;
-	MemberService memservice;
+//	MemberService memservice;
 
 	@GetMapping("/login")
 	public String login() {
@@ -30,15 +30,15 @@ public class UserController {
 		return "users/signup";
 	}
 	
-	@GetMapping("/signupagree")
+	@GetMapping("/users/signupagree")
 	public String signupagree() {
 		return "users/signupagree";
 	}
 	
-	@PostMapping("/signup")
-		public String signup(@ModelAttribute MemberDTO dto) {
-		memservice.save(dto);
-		return "redirect:/";
-	}
+//	@PostMapping("/signup")
+//		public String signup(@ModelAttribute MemberDTO dto) {
+//		memservice.save(dto);
+//		return "redirect:/";
+//	}
 	
 }
