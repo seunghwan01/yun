@@ -57,14 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		var passworda = document.querySelector(".password-a").value;
 		var name = document.querySelector(".name").value;
 		var phone = document.querySelector(".phone").value;
-		var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 
 		var errorMessage = "";
 
-		if(!reg_email.test){
-			errorMessage += "이메일 형식이 잘못되었습니다.\n";
-		}
-		
 		if (!email.trim()) {
 			errorMessage += "이메일을 작성하지 않았습니다.\n";
 		}
@@ -93,4 +88,59 @@ document.addEventListener("DOMContentLoaded", function () {
 			event.preventDefault();
 		}
 	});
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const emailInput = document.querySelector(".email");
+    const checkEmailButton = document.getElementById("checkEmail");
+    const confirmCodeInput = document.getElementById("memailconfirm");
+    const checkEmailAgainButton = document.getElementById("checkEmailagain");
+
+    let confirmationCode; // 수신한 확인 코드를 저장할 변수
+
+    checkEmailButton.addEventListener("click", function() {
+        const email = emailInput.value;
+
+        // Ajax 요청
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/emailConfirm", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // 서버에서 이메일 전송 성공한 경우
+                    alert("이메일이 발송되었습니다. 인증 코드를 입력해주세요.");
+                    // 수신한 확인 코드 저장
+                    confirmationCode = xhr.responseText;
+           			 console.log(confirmationCode);
+                } else {
+                    // 서버에서 이메일 전송 실패한 경우
+                    alert("이메일 발송에 실패했습니다. 다시 시도해주세요.");
+                }
+            }
+        };
+
+        // JSON 형태로 데이터 전송
+         const data = JSON.stringify({ email: email });
+        xhr.send(data);
+        document.getElementById('checkarea').style.display="flex";
+        console.log(xhr);
+    });
+
+    confirmBtn.addEventListener("click", function() {
+        const enteredCode = confirmCodeInput.value;
+
+        // 입력된 코드와 수신한 코드를 비교
+        if (enteredCode === confirmationCode) {
+            alert("인증이 완료되었습니다. 가입을 완료해주세요.");
+            $("#checkarea").hide();
+            $("#checkEmail").text("인증완료");
+            $("#checkEmail").prop("disabled",enteredCode === confirmationCode);
+            $(".email").prop("readonly",enteredCode === confirmationCode)
+            $(".email").css({'border':'1.9px solid #3fe87f'})
+        } else {
+            alert("인증 코드가 올바르지 않습니다. 다시 시도해주세요.");
+        }
+    });
 });

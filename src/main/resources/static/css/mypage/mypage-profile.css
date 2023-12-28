@@ -1,0 +1,132 @@
+@charset "UTF-8";
+.leftpadding{
+	padding-left: 150px;
+}
+.bold{
+	font: bold;
+}
+.profile-wrap{
+	font-size: 25px;
+	border-bottom: 1px solid #ced4da ;
+	padding-bottom: 25px;
+	width: 100%;
+}
+.profilep{
+	padding: 30px 0;
+	align-items: center;
+	border-bottom: 1px solid #eee ;
+}
+.profilep img{
+	height: 100px;
+	width:100px;
+}
+.profilep .namep{
+	height: 100px;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-left: 20px;
+}
+.profilep .namep div{
+	padding-top: 15px;
+	font-size: 20px;
+}
+.profilep .namep button{
+	margin-bottom: 15px;
+	background-color: white;
+	border: 1px solid #ced4da;
+	padding: 6px 12px;
+	cursor: pointer;
+}
+.profileinfo{
+	padding: 30px 0 0 0;
+	border-bottom: 1px solid #eee;
+}
+.profileinfo p{
+	font-size: 17px;
+}
+.profileinfo .sexual{
+	border-bottom: 1px solid #eee;
+}
+.profileinfo div p{
+	font-size: 15px;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.profileinfo div select{
+	margin-left: 20px;
+	padding-left: 5px;
+	width: 200px;
+	height: 40px;
+	border-radius: 7px;
+}
+.profileinfo .flex{
+	padding-bottom: 21px;
+}
+.profileinfo span{
+	margin-left: 50px;
+}
+.profileinfo span label{
+	margin-top: 20px;
+	border: 1px solid #343b4d;
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 108px;
+	height: 47px;
+	border-radius: 7px;
+	cursor: pointer;
+}
+.profileinfo span .female{
+	margin-left: 20px;
+}
+.profileinfo span label input{
+	display: none;
+}
+.profileinfo .passc{
+	padding: 30px 0;
+}
+.profileinfo .passarea input{
+	margin-left: 20px;
+	margin-bottom: 30px;
+	width: 250px;
+	height: 30px;
+	border-radius: 7px;
+	border: 1px solid #868e96;
+	padding-left: 10px;
+}
+.profileinfo .passc p{
+	font-size: 17px;
+}
+.profileinfo .passc button{
+	background-color: #ef2a23;
+	border: none;
+	width: 150px;
+	height: 40px;
+	border-radius: 7px;
+	color: white;
+	cursor: pointer;
+}
+.profileinfo .passc button:active{
+	background-color: white;
+	border: 1px solid darkgreen;
+	color: darkgreen;
+}
+.submit{
+	justify-content: center;
+}
+.submit button{
+	width: 240px;
+	height: 50px;
+	border-radius: 6px;
+	margin: 40px auto 0;
+	cursor: pointer;
+	background-color: #ef2a23;
+	border: none;
+	color: white;
+}

@@ -138,6 +138,6 @@ function modalc8(){
         alert('필수 동의 사항에 모두 동의해주세요.');
       } else {
         alert('모든 필수 동의 사항에 동의하셨습니다. 다음 페이지로 이동합니다.');
-        window.location.href = '/signup'; 
+        window.location.href = '/users/signup'; 
       }
     }

@@ -39,9 +39,6 @@ input[type="password"]{
 	height: 41px;
 	padding-left: 14px;
 }
-.password{
-	margin-top: 22px;
-}
 form{
 	width: 434px;
 	margin: auto;
@@ -50,13 +47,14 @@ form{
 	padding: 15px 0;
 	font-size: 17px;
 	font-weight: bold;
+	margin-top: 20px;
 }
 input[type="submit"]{
 	border-radius: 8px;
 	border:1px solid #868e96;
 	width: 434px;
 	height: 41px;
-	margin-top: 22px;
+	margin-top: 80px;
 	cursor: pointer;
 	background-color: red;
 	color: white;
@@ -84,9 +82,14 @@ h3{
 	display: flex;
 	margin-top: 20px;
 	justify-content: center;
+	padding-top: 10px;
 }
 .socialgroup img{
 	width: 70px;
 	height: 70px;
-	margin: 0 20px;
+	margin: 0 25px;
+}
+input:focus{
+	border: 1.9px solid pink;
+	outline: none;
 }

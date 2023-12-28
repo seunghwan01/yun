@@ -1,23 +1,25 @@
 package com.nowon.cho.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.nowon.cho.domain.dto.MemberDTO;
+import com.nowon.cho.service.EmailService;
+import lombok.RequiredArgsConstructor;
 
 @Controller
+@RequiredArgsConstructor
 public class EmailController {
 
-	@PostMapping("login/mailConfirm")
+	private final EmailService emailService;
+
+	@PostMapping("/emailConfirm")
 	@ResponseBody
-	String mailConfirm(@RequestParam("email") String email) throws Exception {
-
-		   String code = sendSimpleMessage(email);
-		   System.out.println("인증코드 : " + code);
-		   return code;
-		}
-
-	private String sendSimpleMessage(String email) {
-		return null;
+	public ResponseEntity<Integer> mailConfirm(@RequestBody MemberDTO memberDto) {
+		int num = emailService.sendEmail(memberDto.getEmail());
+		return ResponseEntity.ok(num);
 	}
+
 }

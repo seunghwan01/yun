@@ -27,4 +27,6 @@ public class MemberServiceProcess implements MemberService{
 				.addRole(MyRole.USER));
 	}
 
+
+
 }
