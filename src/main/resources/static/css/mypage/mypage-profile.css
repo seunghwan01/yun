@@ -21,6 +21,7 @@
 	width:100px;
 }
 .profilep .namep{
+	margin-left: 400px;
 	height: 100px;
 	vertical-align: middle;
 	display: flex;
@@ -128,5 +129,28 @@
 	cursor: pointer;
 	background-color: #ef2a23;
 	border: none;
+}
+.userinfo input[type=text]{
+	margin-left: 25px;
+}
+.submit button a{
 	color: white;
+}
+.btn-file{
+	display: inline-flex;
+	width:100px;
+	height:100px;
+	border: 1px dashed black;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+	background-color: #eee;
+	background-image: url("/img/mypage/smile.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
+}
+input[type=file]{
+	display: none;
 }

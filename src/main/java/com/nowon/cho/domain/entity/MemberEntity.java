@@ -22,6 +22,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "HermonyMember")
@@ -29,6 +30,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Setter
 public class MemberEntity {
 
 	@Id
@@ -60,7 +62,6 @@ public class MemberEntity {
 		this.phone = memberDTO.getPhone();
 		return this;
 	}
-	
 	
 	
 }

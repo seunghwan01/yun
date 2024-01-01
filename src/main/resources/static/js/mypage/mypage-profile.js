@@ -40,3 +40,40 @@ $(document).ready(function () {
         localStorage.setItem('selectedLabel', labelId);
     }
 });
+
+function passchange() {
+        var currentPass = document.getElementById("currentpass").value;
+        var newPass = document.getElementById("newpass").value;
+        var newPassAgain = document.getElementById("newpassagain").value;
+
+        // 클라이언트 측 유효성 검사 (단순 예시)
+        if (currentPass === "" || newPass === "" || newPassAgain === "") {
+            alert("모든 필드를 입력하세요.");
+            return;
+        }
+
+        if (newPass !== newPassAgain) {
+            alert("새 패스워드가 일치하지 않습니다.");
+            return;
+        }
+
+        // Ajax를 사용하여 서버에 비밀번호 변경 요청 전송
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", "/users/{no}", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // url에 폼 정보를 인코딩하여 보내기 " 보안성 "
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 서버 응답을 받았을 때의 처리 (예: 리다이렉트)
+                window.location.href = "/";
+            } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                // 서버 응답이 실패한 경우의 처리 (예: 에러 메시지 표시)
+                alert("비밀번호 변경에 실패했습니다.");
+            }
+        };
+
+        // 서버로 보낼 데이터 설정
+        var formData = "currentpass=" + encodeURIComponent(currentPass) +
+            "&newpass=" + encodeURIComponent(newPass) +
+            "&newpassagain=" + encodeURIComponent(newPassAgain);
+        xhr.send(formData);
+    }
