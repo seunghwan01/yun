@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.nowon.cho.domain.dto.MemberDTO;
@@ -63,5 +64,6 @@ public class MemberEntity {
 		return this;
 	}
 	
-	
+	@OneToOne(mappedBy = "member")
+    private ProfileImgEntity profileImg;
 }

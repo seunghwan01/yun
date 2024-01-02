@@ -45,7 +45,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/users/signup")
-	public String signup(@ModelAttribute MemberDTO dto) {
+	public String signup(MemberDTO dto) {
 		memservice.save(dto);
 		return "redirect:/";
 	}

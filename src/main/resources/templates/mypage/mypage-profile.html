@@ -4,6 +4,7 @@
 	    <th:block th:replace="~{common/mypage-layout::head}" />
 	    <link rel="stylesheet" href="/css/mypage/mypage-profile.css">
 	    <script type="text/javascript" src="/js/mypage/mypage-profile.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	</head>
 	<body>
 	    <main>
@@ -16,13 +17,15 @@
 						<div class="profile-wrap">프로필 관리</div>
 					</div>
 					<div class="profilep flex">
-						<form action="/profileimg" method="post" enctype="multipart/form-data">
+						<form action="/profileImg" method="post" >
 							<label class="btn-file">
 	<!--							<img src="/img/mypage/smile.svg">-->
-								<input type="file" name="profileImg" accept="image/*">
+								<input type="file" name="profileImg" accept="image/*" onchange="handleProfileImgChange(this)">
+								<input type="hidden" class="tempKey" name="tempKey">
+								<input type="hidden" class="orgName" name="orgName">
 								<div class="namep">
 									<div sec:authentication="name"></div>
-									<button>사진등록</button>
+									<button type="submit">사진등록</button>
 								</div>
 							</label>
 						</form>
@@ -60,15 +63,12 @@
 								        <label for="newpassagain">새 패스워드 확인</label>
 								        <input type="password" id="newpassagain" name="newpassagain" placeholder="패스워드를 재입력" required>
 								    </div>
-								    <div>
+								    <div class="passb">
 								        <button type="button" onclick="passchange()">패스워드 변경하기</button>
 								    </div>
 								</div>
 							</form>
 						</div>
-					</div>
-					<div class="submit flex">
-						<button><a href="/myharmony">저장</a></button>
 					</div>
 				</section>
 			</section>

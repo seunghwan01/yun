@@ -64,7 +64,8 @@ function passchange() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // 서버 응답을 받았을 때의 처리 (예: 리다이렉트)
-                window.location.href = "/";
+                alert("비밀번호 변경에 성공하셨습니다!");
+                window.location.href = "/myharmony";
             } else if (xhr.readyState === 4 && xhr.status !== 200) {
                 // 서버 응답이 실패한 경우의 처리 (예: 에러 메시지 표시)
                 alert("비밀번호 변경에 실패했습니다.");
@@ -77,3 +78,21 @@ function passchange() {
             "&newpassagain=" + encodeURIComponent(newPassAgain);
         xhr.send(formData);
     }
+function handleProfileImgChange(element) {
+    var formData = new FormData();
+    formData.append("profileImg", element.files[0]);
+    $.ajax({
+					url:"/profile-temp-upload",
+					data: formData,
+					type: "post",
+					contentType: false,
+					processData: false,
+					success: function(map){
+						 $("#previewImage").attr("src", map.url);
+						//$(element).parents(".btn-file")
+						$(element).parent().css("background-image", `url(${map.url})`);
+						$(element).siblings(".tempKey").val(map.tempKey);
+						$(element).siblings(".orgName").val(map.orgName);
+					}
+				});
+}

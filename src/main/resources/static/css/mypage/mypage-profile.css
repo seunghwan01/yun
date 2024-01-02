@@ -112,6 +112,7 @@
 	border-radius: 7px;
 	color: white;
 	cursor: pointer;
+	right: 10px;
 }
 .profileinfo .passc button:active{
 	background-color: white;
@@ -131,7 +132,12 @@
 	border: none;
 }
 .userinfo input[type=text]{
-	margin-left: 25px;
+	margin-left: 35px;
+	height: 30px;
+	padding-left: 10px;
+	border-radius: 7px;
+	font-size: 15px;
+	width: 170px;
 }
 .submit button a{
 	color: white;
