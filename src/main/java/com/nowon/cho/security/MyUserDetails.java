@@ -22,6 +22,9 @@ public class MyUserDetails extends User {
 		this.phone=member.getPhone();
 	}
 	
-	
+	public boolean isAdmin() {
+        return getAuthorities().stream()
+                .anyMatch(authority -> authority.getAuthority().equals(MyRole.ADMIN.getRoleName()));
+    }
 
 }

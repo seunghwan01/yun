@@ -16,16 +16,18 @@
 								<th:block sec:authorize="isAnonymous">
 									<li><a href="/users/login">로그인</a></li>
 									<li><a href="/users/signupagree">회원가입</a></li>
-									<li><a href="/admin">관리자페이지</a></li> 
 							<!--th:if="${#authorization.expr('hasRole(''ADMIN'')')}"-->
 								</th:block>
 							</div>
 							<div class="flex-pc after-log" sec:authorize="isAuthenticated()"><!--로그인후-->
 								<th:block sec:authorize="isAuthenticated()">
 									<li>
-										<a href="#" sec:authentication="name">회원이름</a>
+										<a href="#" sec:authentication="principal.name">회원이름</a> 님 어서오세요 !
 									</li>
 									<li><a href="/logout">로그아웃</a></li>
+									<div th:if="${#authentication.principal.admin}">
+										<li><a href="/admin">관리자페이지</a></li> 
+    								</div>
 								</th:block>
 							</div>
 						</div>
