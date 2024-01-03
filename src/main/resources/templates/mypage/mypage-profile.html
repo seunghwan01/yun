@@ -47,6 +47,12 @@
 						        </label>
 						    </span>
 						</div>
+						<div>
+							<span sec:authentication="principal.name">이름</span>
+							<span sec:authentication="principal.phone">이름</span>
+							<input type="text" th:value="${#authentication.principal.name}">
+							<input type="text" th:value="${#authentication.principal.phone}">
+						</div>
 						<div class="passc">
 							<form id="changePasswordForm" method="post" action="/users/change-password">
 								<p class="bold">비밀번호 변경</p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmln:th="http://www.thymeleaf.org">
 	<header>
 		<h1>헤더영역</h1>
 		<section>
@@ -13,14 +13,20 @@
 					<div class="flex-pc user-tab between-pc">
 						<div class="flex-pc user-tab">
 							<div class="flex-pc before-log"><!--로그인전-->
-								<li><a href="/login">로그인</a></li>
-								<li><a href="/users/signupagree">회원가입</a></li>
-								<li><a href="/admin">관리자페이지</a></li>
+								<th:block sec:authorize="isAnonymous">
+									<li><a href="/users/login">로그인</a></li>
+									<li><a href="/users/signupagree">회원가입</a></li>
+									<li><a href="/admin">관리자페이지</a></li> 
+							<!--th:if="${#authorization.expr('hasRole(''ADMIN'')')}"-->
+								</th:block>
 							</div>
-							<div class="flex-pc after-log"><!--로그인후-->
-								
-								<li><a href="#">회원이름</a></li>
-								<li><a href="#">로그아웃</a></li>
+							<div class="flex-pc after-log" sec:authorize="isAuthenticated()"><!--로그인후-->
+								<th:block sec:authorize="isAuthenticated()">
+									<li>
+										<a href="#" sec:authentication="name">회원이름</a>
+									</li>
+									<li><a href="/logout">로그아웃</a></li>
+								</th:block>
 							</div>
 						</div>
 						<div class="flex-pc other-tab">
@@ -34,14 +40,11 @@
 				</a>
 			</section>
 			<section class="view-size-pc head2">
-				<form th:action="@{/result}" method="get">
-					<label for="inputValue"></label>
-					<input type="text" id="inputValue" name="inputValue" placeholder="검색어를 입력하세요">
-					<button type="submit"></button>
+				<form>
+					<input type="text" placeholder="검색어를 입력하세요">
+					<button></button>
 				</form>
 			</section>
-			<script>
-			</script>
 			<section id="list" class="view-size-pc head3">
 				<ul class="flex-pc">
 					<li><a href="/">홈</a></li>

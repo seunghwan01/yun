@@ -1,7 +1,11 @@
 package com.nowon.cho.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.nowon.cho.security.MyUserDetails;
 
 @Controller
 public class MypageController {
@@ -26,8 +30,10 @@ public class MypageController {
 	public String ask() {
 		return "mypage/mypage-ask";
 	}
+	
 	@GetMapping("/profile")
 	public String profile() {
+		
 		return "mypage/mypage-profile";
 	}
 	
