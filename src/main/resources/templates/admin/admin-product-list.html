@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<th:block th:replace="~{common/admin-layout::head}" />
+		<link rel="stylesheet" href="/css/admin/common-list.css">
 		<link rel="stylesheet" href="/css/admin/product-list.css">
 	</head>
 	<body>
@@ -16,14 +17,14 @@
 						<p>상품명</p>
 						<p>가격</p>
 						<p>재고</p>
-						<p>상품설명</p>
+						<p>카테고리</p>
 					</div>
 					<a th:each="m :${list}" class="flex between list list-inner">
 						<p th:text="${m.no}">번호</p>
 						<p th:text="${m.title}">제목</p>
 						<p th:text="${m.price}">가격</p>
 						<p th:text="${m.stock}">재고</p>
-						<p th:text="${m.content}">상품설명</p>
+						<p th:text="${m.category}">카테고리</p>
 					</a>
 				</div>
 			</section>

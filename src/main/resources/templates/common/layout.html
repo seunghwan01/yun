@@ -2,12 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="commonLayout(head, main)">
 	<head>
 		<link rel="stylesheet" href="/css/common/reset-css.css">
-		
-		 <script type="text/javascript" src="/js/common/header.js"></script>
-		 <script type="text/javascript" src="/js/common/layout.js"></script>
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="/webjars/jquery/jquery.min.js"></script>
+		<script src="/webjars/sockjs-client/1.5.1/sockjs.min.js"></script>
+		<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+		<script type="text/javascript" src="/js/common/header.js"></script>
+		<script type="text/javascript" src="/js/common/layout.js"></script>
+		<script type="text/javascript" src="/js/common/chat-bot.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<th:block th:replace="${head}">페이지마다 적용될 css,js resource</th:block>
 		<link rel="stylesheet" href="/css/common/header-footer.css">
+		<link rel="stylesheet" href="/css/common/chat-bot.css">
+		<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8if7242ay4"></script>
 	</head>
 	<body>
 		<th:block th:replace="~{common/header}">header섹션 적용</th:block>
@@ -18,7 +23,7 @@
 				<a href="/cart" id="kart"></a>
 			</div>
 			<span></span>
-			<div class="chat-bot-icon flex center" id="open-chat" onclick="openChat()">
+			<div class="chat-bot-icon flex center" id="open-chat">
 				<div id="chat-robot"></div>
 			</div>
 			<span></span>
@@ -35,39 +40,38 @@
 			  });
 			})
 		</script>
-		<div class="wrap">
-			<section id="conversation">
-				<h1>대화화면</h1>
-				<div class="wrap view-size">
-					<div class="container" id="bot-contatner">
-						<div class="c-header flex between col-center">
-							<p class="help flex col-center"><span>HELP</span></p>
-							<p><b>하모니챗봇</b></p>
-							<p class="close flex end col-center">
-								<span id="close-chat" onclick="closeChat()"></span>
-							</p>
-						</div>
-						<div class="c-content" >
-							<div class="chat-bot-area flex" id="chat-content">
-								<div class="chat-bot-area-box flex center col-center">
-									<p class="chat-bot-icon"></p>
-								</div>
-								<p>안녕하세요</p>
-							</div>
-							<div class="user-area flex end">
-								<p>회원가입 문의</p>
-							</div>
-						</div>
-						<div class="c-question flex col-center">
-							<p class="c-home"></p>
-							<div class="c-question-area">
-								<input type="text" placeholder="질문을 입력하세요">
-								<button class="c-up flex col-center center"><span></span></button>
-							</div>
-						</div>
+		<section id="chat" class="chat-bot">
+			<div class="chat-bot-top flex between center">
+				<div class="top-left">
+					<div class="flex">
+						<img src="/img/common/aside/help_center.svg">
+						<p>HELP</p>
 					</div>
 				</div>
-			</section>
-		</div>
+				<div class="top-mid">
+					<p><b>하모니챗봇</b></p>
+				</div>
+				<div class="top-right">
+					<form class="flex">
+						<button id="disconnect" type="submit"></button>
+					</form>
+				</div>
+			</div>
+			<div class="chat-bot-mid">
+				<div class="content answer flex">
+				</div>
+				<div id="greetings" class="content">
+				</div>
+			</div>
+			<div class="chat-bot-bottom flex">
+				<div class="flex home">
+					<img src="/img/common/aside/home.svg">
+				</div>
+				<form class="textarea">
+					<input type="text" id="content" placeholder="질문을 입력하세요">
+					<button id="send" class="send" type="submit"></button>
+				</form>
+			</div>
+		</section>
 	</body>
 </html>
