@@ -13,12 +13,14 @@ public class ProductSaveDTO {
 	private long price;
 	private int stock;
 	private String content;
+	private String category;
 	public ProductEntity toEntity() {
 		return ProductEntity.builder()
 				.title(name)
 				.price(price)
 				.stock(stock)
 				.content(content)
+				.category(category)
 				.build();
 	}
 	

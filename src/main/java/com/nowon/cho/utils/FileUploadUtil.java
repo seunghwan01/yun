@@ -102,8 +102,12 @@ public class FileUploadUtil {
 	//파일이름 nanoTime()을 이용하여 변경
 	public static String newFileNameByNanotime(String orgName) {
 		int idx=orgName.lastIndexOf(".");
-		return orgName.substring(0, idx)+"-"+(System.nanoTime()/1000000)
-				+ orgName.substring(idx); //.확장자
+		String rename = null;
+		if(orgName!="")
+			rename = orgName.substring(0, idx)+"-"+(System.nanoTime()/1000000)
+					+ orgName.substring(idx); //.확장자
+			System.out.println("새로만든이름"+rename);
+		return rename;
 	}
 
 	
