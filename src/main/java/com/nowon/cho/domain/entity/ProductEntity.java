@@ -1,14 +1,17 @@
 package com.nowon.cho.domain.entity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.nowon.cho.domain.dto.ProductListDTO;
-import com.nowon.cho.domain.dto.ProductSaveDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,16 +37,33 @@ public class ProductEntity {
 	private int stock;
 	@Column(nullable = false, columnDefinition = "text")
 	private String content;
+	@Column(nullable = false)
+	private String category;
+	
+	@OneToMany(mappedBy = "product")
+	private List<ProductImgEntity> imgs;
 	
 	public ProductListDTO toProductListDTO() {
+		
+		ProductImgEntity mainImg=imgs.stream()
+				.filter(img -> img.isCheckImg()==true)
+				.findFirst()
+				.get();
+				
+		//List<ProductImgSaveDTO> allImgs=;
 		return ProductListDTO.builder()
 							.no(no)
 							.title(title)
 							.price(price)
 							.stock(stock)
 							.content(content)
+							.category(category)
+							.imgs(imgs.stream()
+									.map(ProductImgEntity::toProductImgListDTO)
+									.collect(Collectors.toList()))
+							.mainImgUrl("https://s3.ap-northeast-2.amazonaws.com/khc.bucket/"+mainImg.getBucketKey())
 				.build();
+		
 	}
-	
 	
 }

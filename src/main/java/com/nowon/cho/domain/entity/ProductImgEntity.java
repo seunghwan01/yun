@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.nowon.cho.domain.dto.ProductImgListDTO;
+import com.nowon.cho.domain.dto.ProductImgSaveDTO;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,5 +36,16 @@ public class ProductImgEntity {
 	
 	@ManyToOne
 	private ProductEntity product;
+	public ProductImgListDTO toProductImgListDTO() {
+		return ProductImgListDTO.builder()
+								.url("https://s3.ap-northeast-2.amazonaws.com/khc.bucket/"+bucketKey)
+								.check(checkImg)
+								.build();
+	}
+	public ProductImgListDTO toAllImgDTO() {
+		return ProductImgListDTO.builder()
+								.url("https://s3.ap-northeast-2.amazonaws.com/khc.bucket/"+bucketKey)
+								.build();
+	}
 	
 }

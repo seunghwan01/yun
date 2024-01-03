@@ -9,11 +9,3 @@ function openPop(){
 function openUserTap(){
 	document.getElementById('userTap').classList.toggle('active');
 }
-function openChat(){
-	document.getElementById('bot-contatner').classList.toggle('active');
-	document.getElementById('chat-robot').classList.toggle('active');
-}
-function closeChat(){
-	document.getElementById('bot-contatner').classList.toggle('active');
-	document.getElementById('chat-robot').classList.toggle('active');
-}

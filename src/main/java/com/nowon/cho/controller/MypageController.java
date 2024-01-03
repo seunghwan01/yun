@@ -26,5 +26,9 @@ public class MypageController {
 	public String ask() {
 		return "mypage/mypage-ask";
 	}
+	@GetMapping("/profile")
+	public String profile() {
+		return "mypage/mypage-profile";
+	}
 	
 }
