@@ -18,6 +18,7 @@ main>.wrap {
 }
 
 .CS1 {
+	font-weight: 600;
 	font-size: 36px;
 	line-height: 1.39;
 	letter-spacing: -1.1px;
@@ -145,27 +146,6 @@ main>.wrap {
 	top: 10px;
 	right: -15px;
 	margin: 0;
-}
-
-.searcha {
-	margin-top: 20px;
-	text-align: center;
-	line-height: 22px;
-	letter-spacing: -.02em;
-	display: center;
-}
-
-.searcha b {
-	margin-right: 24px;
-	font-size: 14px;
-	font-weight: 700;
-	vertical-align: top;
-	font-weight: 700;
-}
-
-.searchb {
-	padding-right: 10px;
-	padding-left: 10px;
 }
 
 .SC3 {

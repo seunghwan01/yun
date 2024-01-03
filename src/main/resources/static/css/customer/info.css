@@ -18,6 +18,7 @@ main>.wrap {
 }
 
 .CS1 {
+	font-weight: 600;
 	font-size: 36px;
 	line-height: 1.39;
 	letter-spacing: -1.1px;
@@ -111,6 +112,10 @@ main>.wrap {
 
 .SC2b {
 	font-weight: 700;
+	font-size: 16px;
+	vertical-align: middle;
+	display: table-cell;
+
 }
 .CS2>:nth-child(3)>a{
 	font-weight: bold;
@@ -174,4 +179,92 @@ main>.wrap {
 
 .SC4_1 {
 	padding-bottom: 40px;
+}
+
+.board_wrap {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.board_list {
+  width: 100%;
+  border-top: 2px solid #000;
+}
+.board_list > div {
+  border-bottom: 1px solid #ddd;
+  font-size: 0;
+}
+.board_list > div.top {
+  border-bottom: 1px solid #999;
+}
+.board_list > div:last-child {
+  border-bottom: 1px solid #000;
+}
+.board_list > div > div {
+  display: inline-block;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.board_list > div.top > div {
+  font-weight: 600;
+}
+
+.board_list .num {
+  width: 10%;
+}
+.board_list .title {
+  width: 60%;
+  text-align: left;
+}
+.board_list .top .title {
+  text-align: center;
+}
+.board_list .writer {
+  width: 10%;
+}
+.board_list .date {
+  width: 10%;
+}
+.board list .count {
+  width: 10%;
+}
+
+.board_page {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.board_page a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-left: 0;
+  line-height: 100%;
+}
+
+.board_page a.bt {
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+.board_page a.num {
+  padding-top: 9px;
+  font-size: 14px;
+}
+
+.board_page a.num.on {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.board_page a:first-child {
+  border-left: 1px solid #ddd;
 }

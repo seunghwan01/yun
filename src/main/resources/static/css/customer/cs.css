@@ -18,6 +18,7 @@ main>.wrap {
 }
 
 .CS1 {
+	font-weight: 600;
 	font-size: 36px;
 	line-height: 1.39;
 	letter-spacing: -1.1px;
@@ -84,7 +85,19 @@ main>.wrap {
 .SC {
 	padding-left: 54px;
 	width: 930px;
-	
+}
+
+.SC0_1{
+}
+
+.SC0_2{
+	 font-size: 30px;
+}
+
+.SC0{
+	display: flex;
+	padding: 22px 0 24px 0;
+    border-bottom: 1px solid #000;
 }
 
 .SC1 {
@@ -115,6 +128,10 @@ main>.wrap {
 	position: relative;
 	overflow: hidden;
 	margin: 80px 0 0;
+}
+
+.SCA3{
+	font-size: 15px;
 }
 
 .SC4 {
@@ -155,21 +172,6 @@ main>.wrap {
 	letter-spacing: -.02em;
 }
 
-.SC7 {
-	margin-top: 80px;
-	position: relative;
-	font-size: 24px;
-	line-height: 34px;
-	letter-spacing: -.029em;
-	margin-bottom: 20px;
-	justify-content: space-between;
-	display: flex;
-}
-
-.SC7.a {
-	font-size: 10px;
-}
-
 .SC8 {
 	display: block;
 	margin-block-start: 1em;
@@ -202,14 +204,13 @@ main>.wrap {
 }
 
 .searcha {
-	margin-top: 20px;
+	margin-top: 12px;
 	text-align: center;
 	line-height: 22px;
 	letter-spacing: -.02em;
-	display: center;
 }
 
-.searcha b {
+.searchb {
 	margin-right: 24px;
 	font-size: 14px;
 	font-weight: 700;
@@ -217,10 +218,11 @@ main>.wrap {
 	font-weight: 700;
 }
 
-.searchb{
-	padding-right: 10px;
-	padding-left: 10px;
+.searchc{
+	text-align: center;
+	margin-right: 44px;
 }
-.SCa7{
+	
+.SCA7{
 	font-size: 16px;
 }
