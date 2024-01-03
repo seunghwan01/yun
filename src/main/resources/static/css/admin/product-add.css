@@ -43,7 +43,9 @@ input[type=file]{
 	margin-right: 10px;
 }
 
-
+.no{
+	align-items: center;
+}
 textarea{
 	width:500px;
 	height:100px;
@@ -53,4 +55,8 @@ textarea{
 }
 .pro-add> .no> div{
 	height:102px;
+}
+.category{
+	width:250px;
+	height:50px;
 }

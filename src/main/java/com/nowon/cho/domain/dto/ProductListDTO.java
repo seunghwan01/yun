@@ -1,8 +1,9 @@
 package com.nowon.cho.domain.dto;
 
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @ToString
@@ -15,5 +16,9 @@ public class ProductListDTO {
 	private long price;
 	private int stock;
 	private String content;
+	private String category;
+	private String mainImgUrl;
+	private List<ProductImgListDTO> imgs;
+	
 	
 }

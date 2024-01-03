@@ -13,107 +13,31 @@
 </head>
 <body>
 <main>
-    <div class="logo-bar con">
-        <div class="bn-box con">
-            <div class="img-box">
-                <img src="/img/index/hamo7.jpeg" alt="">
-            </div>
-        </div>
-        <div class="list con">
-            <ul class="row">
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck1.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry</div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck2.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry</div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck3.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck4.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry</div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck5.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry</div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck6.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry</div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck7.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck8.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck9.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck10.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck11.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck12.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck13.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck14.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck15.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck16.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck17.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-                <li class="cell">
-                    <div class="img-box"><img src="/img/sub/necklace/neck18.jpeg" alt=""></div>
-                    <div class="product-name">Jewelry </div>
-                    <div class="product-price">39800</div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <h1>목걸이페이지</h1>
+    <section class="title necklace">
+		<div class="title-box">
+			<p class="title-text">NECKLACE</p>
+		</div>
+	</section>
+	<p class="product-title">PRODUCT</p>
+    <section class="product view-size flex between">
+		<div th:each="m :${list}" th:if="${m.category} == 목걸이" class="product-box">
+			<div class="img-box">
+				<img th:src="${m.mainImgUrl}">
+			</div>
+			<div class="flex center">
+				<a class="img-text">이름 : </a>
+				<a th:text="${m.title}" class="img-text">이름 : 상품1</a>
+			</div>
+			<div class="flex center">
+				<a class="img-text">가격 : </a>
+				<a th:text="${m.price}" class="img-text">가격 : 1000원</a>
+			</div>
+			<div class="hover-effect">
+				<a th:href="@{/product-info/{pk}(pk=${m.no})}" class="move-info">자세히보기</a>
+			</div>
+		</div>
+	</section>
 </main>
 </body>
 </html>

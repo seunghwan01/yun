@@ -1,16 +1,11 @@
-var swiper = new Swiper(".mySwiper", {
-    loop:true,
-    effect:"cube",
-    autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        //슬라이더 숫자표현
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-    },
-});
+function mainImg(){
+	var imgsrc=$(".img-wrap .target").attr("src");
+	$(".img-wrap .main-img").css("background-image", `url(${imgsrc})`)
+}
+
+mainImg();
+$(".img-wrap img").click(function(){
+	$(".img-wrap img").removeClass("target");
+	$(this).addClass("target");
+	mainImg();
+})
