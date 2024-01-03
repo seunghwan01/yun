@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="/css/common/reset-css.css" />
 		<link rel="stylesheet" href="/css/users/signup.css" />
 		<script type="text/javascript" src="/js/users/signup.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<meta charset="UTF-8">
 		<title>Harmony 회원가입</title>
 	</head>
@@ -12,12 +13,12 @@
 			<div class="signup-menu">
 				<div class="signup-menu-1">
 					<span>
-						<img src="/img/common/harmony-logo.png" class="signup-logo">
+						<a href="/"><img src="/img/common/harmony-logo.png" class="signup-logo"></a>
 					</span>
 					<div class="signup-text1">
-						Harmony 통합회원 가입
+						통합회원 가입
 					</div>
-					<form action="/signup" method="post">
+					<form action="/users/signup" method="post">
 						<div class="e-form">
 							<div class="e-form-1">
 								이메일아이디
@@ -26,9 +27,10 @@
 								<input type="text" class="email" placeholder="이메일 주소를 입력해주세요" name="email">
 								<button id="checkEmail" type="button">이메일 인증</button>
 							</div>
-							<div>
+							<div id="checkarea" class="e-checkarea flex">
 								<input type="text" class="e-check" placeholder="인증번호를 입력해주세요" id="memailconfirm">
-							</div> 
+								<button id="confirmBtn" type="button">인증확인</button>
+							</div>
 						</div>
 						<div class="p-form">
 							<div class="p-form-1">
@@ -62,11 +64,11 @@
 								<input type="text" class="phone" placeholder="전화번호를 입력해주세요" name="phone">
 							</div>
 						</div>
-					<div class="signup-menu-2">
-						<div class="signup-b">
-							<input type="submit" value="가입 완료">
+						<div class="signup-menu-2">
+							<div class="signup-b">
+								<input type="submit" value="가입 완료">
+							</div>
 						</div>
-					</div>
 					</form>
 				</div>
 			</div>

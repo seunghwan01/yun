@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.nowon.cho.domain.dto.MemberDTO;
@@ -22,6 +23,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "HermonyMember")
@@ -29,6 +31,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Setter
 public class MemberEntity {
 
 	@Id
@@ -61,5 +64,6 @@ public class MemberEntity {
 		return this;
 	}
 	
-	
+	@OneToOne(mappedBy = "member")
+    private ProfileImgEntity profileImg;
 }

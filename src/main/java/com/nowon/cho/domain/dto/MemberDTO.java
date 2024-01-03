@@ -10,11 +10,8 @@ import lombok.Data;
 public class MemberDTO {
 
 	private String email;
-	
 	private String pass;
-	
 	private String name;
-	
 	private String phone;
 	
 	public MemberEntity getDTO(PasswordEncoder pe) {
