@@ -58,8 +58,9 @@ public class indexController {
         return "/sub/product-info";
     }
     @GetMapping("/result")
-    public String getResultPage(@RequestParam(name = "inputValue", required = false) String inputValue, Model model) {
+    public String getResultPage(@RequestParam(name = "inputValue", defaultValue = "") String inputValue, Model model) {
         // 입력된 값 모델에 추가
+    	service.prdlistProcess(model, inputValue);
         model.addAttribute("inputValue", inputValue);
         return "/sub/result";
     }

@@ -8,5 +8,6 @@ public interface ProductService {
 	void prdImglistProcess(Model model);
 	void productDetailProcess(Long pk, Model model);
 	void productSearchProcess(Model model);
+	void prdlistProcess(Model model, String inputValue);
 
 }
