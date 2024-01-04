@@ -28,7 +28,7 @@ public class SecurityConfig {
 		http.csrf((csrf)->csrf.disable())
 			.authorizeHttpRequests(authorize->authorize
 					.antMatchers("/css/**", "/img/**", "/js/**").permitAll()
-					.antMatchers("/", "/users/signup", "/users/login","/users/signupagree","/cart").permitAll()
+					.antMatchers("/", "/users/signup", "/users/login","/users/signupagree","/cart","/sub/**","/product-info/**","/cs","/faq").permitAll()
 					.anyRequest().permitAll()
 					)
 			.formLogin(formlogin->formlogin
