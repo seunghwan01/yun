@@ -93,3 +93,9 @@ input:focus{
 	border: 1.9px solid pink;
 	outline: none;
 }
+.session-msg{
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+	background-color: pink;
+}
