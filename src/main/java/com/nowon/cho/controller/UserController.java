@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	MemberService memservice;
 	@Autowired
-	private PasswordEncoder pe;
+	PasswordEncoder pe;
 
 	@GetMapping("/users/login")
 	public String login() {

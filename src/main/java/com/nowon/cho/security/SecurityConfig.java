@@ -28,8 +28,8 @@ public class SecurityConfig {
 		http.csrf((csrf)->csrf.disable())
 			.authorizeHttpRequests(authorize->authorize
 					.antMatchers("/css/**", "/img/**", "/js/**").permitAll()
-					.antMatchers("/", "/users/signup", "/users/login","/users/signupagree","/cart").permitAll()
-					.anyRequest().permitAll()
+					.antMatchers("/", "/users/signup", "/users/login","/users/signupagree","/cart","/sub/**","/product-info/**","/cs","/faq","mypage/mypage").permitAll()
+					.anyRequest().authenticated()
 					)
 			.formLogin(formlogin->formlogin
 					.loginPage("/users/login")

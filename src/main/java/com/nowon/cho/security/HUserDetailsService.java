@@ -24,6 +24,7 @@ public class HUserDetailsService implements UserDetailsService{
 		MemberEntity member = memRepo.findByEmail(username).orElseThrow(()-> new UsernameNotFoundException(username));
 		Set<SimpleGrantedAuthority> grantedAuthority = member.getRoles().stream()
 				.map(myRole -> new SimpleGrantedAuthority(myRole.name())).collect(Collectors.toSet());
-		return new User(username, member.getPass(), grantedAuthority);
+		
+		return new MyUserDetails(member, member.getPass(), grantedAuthority);
 	}
 }
