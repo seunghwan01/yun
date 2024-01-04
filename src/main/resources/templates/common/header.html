@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmln:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 	<header>
 		<h1>헤더영역</h1>
 		<section>
@@ -42,9 +42,10 @@
 				</a>
 			</section>
 			<section class="view-size-pc head2">
-				<form>
-					<input type="text" placeholder="검색어를 입력하세요">
-					<button></button>
+				<form th:action="@{/result}" method="get">
+					<label for="inputValue"></label>
+					<input type="text" id="inputValue" name="inputValue" placeholder="검색어를 입력하세요">
+					<button type="submit"></button>
 				</form>
 			</section>
 			<section id="list" class="view-size-pc head3">

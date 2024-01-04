@@ -23,7 +23,7 @@
 .chat-bot{
 	width:350px;
 	height:500px;
-	position: absolute;
+	position: fixed;
 	right:120px;
 	bottom:100px;
 	display: none;

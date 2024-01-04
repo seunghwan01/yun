@@ -25,6 +25,16 @@ public class ProductServiceProcess implements ProductService{
 	private final ProductImgEntityRepository proImgRepo;
 	
 	@Override
+	public void prdlistProcess(Model model, String inputValue) {
+		Sort sort=Sort.by(Direction.ASC, "no");
+		model.addAttribute("list", productRepo.findAllByTitleContaining(inputValue,sort).stream()
+										.map(ProductEntity::toProductListDTO)
+										.collect(Collectors.toList())
+				);
+		
+	}
+	
+	@Override
 	public void prdlistProcess(Model model) {
 		
 		Sort sort=Sort.by(Direction.ASC, "no");
@@ -44,6 +54,8 @@ public class ProductServiceProcess implements ProductService{
 				);
 		
 	}
+	
+	
 	@Override
 	public void productDetailProcess(Long pk,Model model) {
 		model.addAttribute("dto", productRepo.findById(pk)
@@ -60,5 +72,6 @@ public class ProductServiceProcess implements ProductService{
 				;
 		
 	}
+	
 
 }
