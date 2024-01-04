@@ -55,7 +55,7 @@ function disconnect(){
 	});
 }
  $(function(){
-	 $("form").submit((e)=>e.preventDefault());
+	 $("#chat.form").submit((e)=>e.preventDefault());
 	 //$("a").click((e)=>e.preventDefault());
 	 $( "#open-chat" ).click(connect);
 	 //$( "#connect" ).click(()=>connect());

@@ -114,7 +114,7 @@ main>.wrap {
 .title_1 {
 	padding-top: 30px;
 	vertical-align: top;
-	font-size: 24px;
+	font-size: 20px;
 	letter-spacing: -.019em;
 	text-align: left;
 	padding-right: 30px;
@@ -127,7 +127,7 @@ main>.wrap {
 
 #titl {
 	width: 600px;
-	height: 35px;
+	height: 25px;
 	font-size: 18px;
 	border-radius: 10px;
 	padding-left: 10px;
@@ -146,7 +146,7 @@ main>.wrap {
 .msg_1 {
 	padding-top: 12px;
 	vertical-align: top;
-	font-size: 23px;
+	font-size: 20px;
 	letter-spacing: -.019em;
 	text-align: left;
 	padding-right: 60px;
@@ -167,51 +167,51 @@ main>.wrap {
 
 .pho_1{
 	padding-top: 40px;
-	font-size: 23px;
+	font-size: 20px;
 }
 
-.BUT {
+.but {
 	margin-top: 30px;
 	padding-top: 40px;
 	border-top: 1px solid #eee;
 	text-align: center;
-}
-	
-.upload-img {
-    display: inline-block;
+	margin-top: 20px;
 }
 
-.btn-img {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    background-color: rgb(255, 255, 255); /* 버튼 배경 색상 */
-    color: #fff; /* 버튼 텍스트 색상 */
-    padding: 8px 12px; /* 버튼 여백 조절 */
-    border-radius: 4px; /* 버튼 모서리 둥글게 */
+.works{
+  position: relative;
+  width: 150px;
+  height: 45px;
+  font-size: 14px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: solid black;
+  border-width: 2px;
 }
 
-.btn-img input[type=file] {
-    font-size: 100px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    cursor: pointer;
+.file-wrap2 .btn-file{
+	width:50px;
+	height:50px;
+	margin-right: 10px;
 }
 
-.main-img-plus {
-    font-size: 30px; /* 플러스 아이콘 크기 조절 */
-    margin-right: 5px; /* 플러스 아이콘과 텍스트 간 여백 조절 */
+.btn-file{
+	display: inline-flex;
+	width:100px;
+	height:100px;
+	border: 1px dashed black;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+	background-color: #eee;
+	/*background-image: url();*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
 }
 
-.preview-image {
-    max-width: 100%;
-    max-height: 200px;
-    margin-top: 10px;
-    display: none;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+input[type=file]{
+	display: none;
 }

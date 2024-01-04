@@ -57,78 +57,83 @@
 					<li>1:1 문의하기</li>
 				</ul>
 				<div class="customerinputform">
-					<div class="qna">
-						<div class="title_0">
-							<div class="title_1">
-								제목
+					<form action="/qna/register" method="post" onsubmit="return questionCheck()"> <!-- 폼태그 시작 -->
+						<div class="qna">
+							<div class="title_0">
+								<div class="title_1">
+									제목
+								</div>
+								<div class="title">
+									<input type="text" maxlength="30" name="title" id="titl"> <!-- name 속성 추가 -->
+								</div>
 							</div>
-							<div class="title">
-								<input type="text" maxlength="30" id="titl">
+							<div class="msg_0">
+								<div class="msg_1">
+									내용
+								</div>
+								<div class="msg">
+									<textarea maxlength="5000" name="message" id="message"></textarea>
+									<!-- name 속성 추가 -->
+								</div>
+							</div>
+							<div class="pho_0">
+								<div class="pho_1">
+									사진첨부
+								</div>
+								<span class="upload-img">
+									<span class="file-wrap">
+										<label class="btn-file">
+											<input type="file" accept="image/*" onchange="changedImg(this)">
+											<input type="hidden" class="tempKey" name="tempKey">
+											<input type="hidden" class="orgName" name="orgName">
+											<input type="hidden" class="check" name="checkImg" value="1">
+											<span class="main-img-plus">+</span>
+										</label>
+									</span>
+								</span>
+							</div>
+							<div class="checkbox">
 							</div>
 						</div>
-						<div class="msg_0">
-							<div class="msg_1">
-								내용
-							</div>
-							<div class="msg">
-								<textarea maxlength="5000" id="message"></textarea>
-							</div>
+						<div class="but">
+							<button type="submit" class="works">질문 등록</button> <!-- type="submit" 추가 -->
 						</div>
-						<div class="pho_0">
-							<div class="pho_1">
-								사진첨부
-							</div>
-							<span class="upload-img">
-                                <label class="btn-img">
-                                    <input type="file" accept="image/*" idx="1" onchange="changedImgSub(this)">
-                                    <input type="hidden" class="tempKey" name="tempKey">
-                                    <input type="hidden" class="orgName" name="orgName">
-                                    <input type="hidden" class="check" name="checkImg" value="0">
-                                    <span class="main-img-plus">+</span> <!-- 이미지를 올리기 전에 텍스트 또는 아이콘 등을 보여줄 부분 추가 -->
-                                    <img class="preview-image" id="previewImage" src="#" alt="미리보기">
-                                </label>
-                            </span>
-						</div>
-						<div class="checkbox">
-
-						</div>
-					</div>
-					<div class="BUT">
-						<button>문의하기</button>
-					</div>
+					</form> <!-- 폼태그 종료 -->
 				</div>
 			</section>
 		</div>
+		<!-- 이미지 미리보기를 위한 JavaScript 코드 추가 -->
+		<script>
+			function questionCheck(){
+				var title = document.getElementById('titl').value;
+				var message = document.getElementById('message').value;
+				/*
+				if (title == null || title.trim() === '')  {
+					alert('제목을 입력해주세요.');
+					return false;
+				}else if(message == null || message.trim() === ''){
+					alert('내용을 입력해주세요.');
+					return false;
+				}
+				
+				return true;
+				*/
+				
+				if (title == null || title.trim() === '')  {
+					alert('제목을 입력해주세요.');
+				}else if(message == null || message.trim() === ''){
+					alert('내용을 입력해주세요.');
+				}else{
+					return true;
+				}
+				
+				return false;
+			}
+			
+			
+		</script>
 	</main>
-	 <!-- 이미지 미리보기를 위한 JavaScript 코드 추가 -->
-     <script>
-        function changedImgSub(input) {
-            var file = input.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    // 선택된 이미지를 미리보기하는 이미지 태그에 적용
-                    document.getElementById('previewImage').src = e.target.result;
-                    // 이미지를 선택한 후에는 버튼을 숨김, 미리보기 영역을 보이게 변경
-                    input.parentNode.querySelector('.btn-img span.main-img-plus').style.display = 'none';
-                    input.parentNode.querySelector('.preview-image').style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function uploadProduct() {
-            // 여기에 상품 등록하는 로직을 추가하세요.
-            alert('상품이 등록되었습니다!');
-            // 상품 등록 후에는 미리보기 이미지를 초기화
-            document.getElementById('previewImage').src = '';
-            // 버튼 및 미리보기 영역을 초기 상태로 변경
-            var uploadImgContainer = document.querySelector('.upload-img');
-            uploadImgContainer.querySelector('.btn-img span.main-img-plus').style.display = 'inline-block';
-            uploadImgContainer.querySelector('.preview-image').style.display = 'none';
-            // 여기에서 상품 등록 후의 추가 작업을 수행할 수 있습니다.
-        }
-    </script>
+	
 </body>
 
 </html>
