@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.nowon.cho.domain.dto.MemberDTO;
 import com.nowon.cho.domain.entity.MemberEntity;
 import com.nowon.cho.domain.entity.MemberEntityRepository;
+import com.nowon.cho.security.MyRole;
 import com.nowon.cho.service.MemberService;
 
 @Controller
