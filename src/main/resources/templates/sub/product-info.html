@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/sub/sub.css">
     <link rel="stylesheet" href="/css/sub/product-info.css">
     <script src="/js/index.js"></script>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 </head>
 <body>
     <main>
@@ -20,7 +21,7 @@
 					</th:block>
 					</div>
 				</div>
-				<script>
+				<script >
 					function mainImg(){
 						var imgsrc=$(".img-wrap .target").attr("src");
 						$(".img-wrap .main-img").css("background-image", `url(${imgsrc})`)
@@ -32,14 +33,21 @@
 						$(this).addClass("target");
 						mainImg();
 					})
+					
+				    function payment(){
+						var windowInfo = "width=700,height=500,left=100,top=50";
+					    
+					    window.open("http://localhost:8080/payment", "_blank", windowInfo);
+					}
 				</script>
+				
 				<div class="product-info">
 					<p><span th:text="${dto.category}"></span></p>
 					<p class="top"><span th:text="${dto.title}"></span></p>
 					<p class="top"><span th:text="${dto.price}"></span>원</p>
 					<div class="product-btn flex between">
 						<button><a href="#" class="flex center"><p>장바구니담기</p></a></button>
-						<button class="black-btn"><a href="#" class="flex center"><p>구매하기</p></a></button>
+						<button class="black-btn" onclick="payment()"><a href="#" class="flex center"><p>구매하기</p></a></button>
 					</div>
 				</div>
 			</div>
