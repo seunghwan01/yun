@@ -29,6 +29,7 @@ public class SecurityConfig {
 			.authorizeHttpRequests(authorize->authorize
 					.antMatchers("/css/**", "/img/**", "/js/**").permitAll()
 					.antMatchers("/", "/users/signup", "/users/login","/users/signupagree","/cart","/sub/**","/product-info/**","/cs","/faq").permitAll()
+					.antMatchers("/myharmony").authenticated()
 					.anyRequest().permitAll()
 					)
 			.formLogin(formlogin->formlogin
@@ -38,6 +39,7 @@ public class SecurityConfig {
 					.passwordParameter("pass")
 					.permitAll()
 					)
+			.logout(logout->logout.logoutSuccessUrl("/"))
 			.oauth2Login(oauth2->oauth2
 					.loginPage("/users/login")
 					.userInfoEndpoint(userInfo->userInfo

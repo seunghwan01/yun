@@ -17,11 +17,11 @@
 				<div>
 					<!--DB에서 로그인정보통해불러오기(환영합니다제외)-->
 					<div class="flex">
-						<p>관리자이름</p>
+						<p sec:authentication="principal.name">관리자이름</p>
 						<p> 님 환영합니다.</p>
 					</div>
-					<p>이메일</p>
-					<button>로그아웃</button>
+					<p sec:authentication="name">이메일</p>
+					<button><a href="/logout">로그아웃</a></button>
 				</div>
 			</section>
 			<section class="admin-list">

@@ -10,4 +10,6 @@ public interface AdminService {
 	
 	void mainBannerListDeleteProcess(long no);
 
+	void updateProcess(long no, String title, long price, int stock, String category);
+
 }

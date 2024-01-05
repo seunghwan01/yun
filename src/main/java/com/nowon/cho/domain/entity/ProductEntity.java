@@ -65,5 +65,12 @@ public class ProductEntity {
 				.build();
 		
 	}
+	public ProductEntity update(String title, long price, int stock, String category) {
+		this.title=title;
+		this.price=price;
+		this.stock=stock;
+		this.category=category;
+		return this;
+	}
 	
 }
