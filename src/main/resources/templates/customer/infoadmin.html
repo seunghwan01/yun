@@ -54,7 +54,7 @@
 			</section>
 			<section class="SC">
 				<ul class="SC1">
-					<li>1:1 문의하기</li>
+					<li>공지사항 작성</li>
 				</ul>
 				<div class="customerinputform">
 					<form action="/qna/register" method="post" onsubmit="return questionCheck()"> <!-- 폼태그 시작 -->
@@ -104,7 +104,7 @@
 		</div>
 		<!-- 이미지 미리보기를 위한 JavaScript 코드 추가 -->
 		<script>
-			function questionCheck() {
+			function questionCheck(){
 				var title = document.getElementById('titl').value;
 				var message = document.getElementById('message').value;
 				/*
@@ -118,22 +118,22 @@
 				
 				return true;
 				*/
-
-				if (title == null || title.trim() === '') {
+				
+				if (title == null || title.trim() === '')  {
 					alert('제목을 입력해주세요.');
-				} else if (message == null || message.trim() === '') {
+				}else if(message == null || message.trim() === ''){
 					alert('내용을 입력해주세요.');
-				} else {
+				}else{
 					return true;
-				}
+				}				
 				alert('게시글이 등록되었습니다.');
 				return false;
 			}
-
-
+			
+			
 		</script>
 	</main>
-
+	
 </body>
 
 </html>
