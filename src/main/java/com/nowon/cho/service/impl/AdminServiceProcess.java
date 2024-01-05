@@ -2,6 +2,8 @@ package com.nowon.cho.service.impl;
 
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
@@ -48,6 +50,13 @@ public class AdminServiceProcess implements AdminService{
 		bannerRepo.deleteById(no);
 	}
 	
-	
+	@Transactional
+	@Override
+	public void updateProcess(long no, String title, long price, int stock, String category) {
+		productRepo.findById(no).orElseThrow() // 여기까지 원본 데이터
+				.update(title, price, stock, category); // 내용만 수정 후 나머지는 그대로
+		System.out.println("트랜잭션 적용한 메서드");
+		System.out.println("연결이 유지되는 상황에서 엔터티객체가 수정되면 update가 실행됩니다");
+	}
 	
 }

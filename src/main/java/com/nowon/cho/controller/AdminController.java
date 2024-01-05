@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -148,7 +149,14 @@ public class AdminController {
 	public Map<String, String> bannerTempUpload(MultipartFile bannerImgs) {
 		return FileUploadUtil.s3Upload(client, bucketName, bannerTempPath, bannerImgs);
 	}
-	
+	@ResponseBody
+	@PutMapping("/productList/{no}")
+	public String update(@PathVariable long no, String title, long price, int stock, String category) {
+		//System.out.println(">>>수정할pk:"+no);
+		//System.out.println(">>>수정할content:"+content);
+		service.updateProcess(no, title, price, stock, category);
+		return "수정성공";
+	}
 	
 	
 	
