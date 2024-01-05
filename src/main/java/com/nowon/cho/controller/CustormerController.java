@@ -17,9 +17,16 @@ public class CustormerController {
 	private QuestionService questionService;
 
 	@GetMapping("/cs")
-	public String cs() {
-		return "customer/cs";
-	}
+    public String csPage() {
+        // 해당 경로에 대한 로직 처리
+        return "customer/cs";
+    }
+
+    @GetMapping("/csButton")
+    public String csButton() {
+        // 해당 경로에 대한 로직 처리
+        return "customer/cs";
+    }
 
 	@GetMapping("/faq")
 	public String faq() {
@@ -38,8 +45,13 @@ public class CustormerController {
 
 	@PostMapping("/qna/register")
 	public String registerQuestion(QuestionSaveDTO dto, Authentication auth) {
-		
+
 		return questionService.saveQuestion(dto, auth);
-		
 	}
+
+	@GetMapping("/infoadmin")
+	public String infoAdmin() {
+		return "customer/infoadmin"; // 해당하는 Thymeleaf 템플릿 경로로 수정
+	}
+
 }

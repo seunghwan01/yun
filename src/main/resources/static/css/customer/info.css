@@ -268,3 +268,20 @@ main>.wrap {
 .board_page a:first-child {
   border-left: 1px solid #ddd;
 }
+
+.adminbut{
+ text-align:center;
+ margin-top: 20px;
+}
+
+.adminbutton{
+  position: relative;
+  width: 150px;
+  height: 45px;
+  font-size: 14px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: solid black;
+  border-width: 2px;	
+}
