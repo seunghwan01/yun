@@ -2,6 +2,18 @@
 .leftpadding{
 	padding-left: 150px;
 }
+.spanpadding{
+	padding-left: 30px;
+}
+.pPadding1{
+	padding-left: 20px;
+}
+.pPadding2{
+	padding-left: 51px;
+}
+.pPadding3{
+	padding-left: 36px;
+}
 .bold{
 	font: bold;
 }
@@ -32,6 +44,7 @@
 .profilep .namep div{
 	padding-top: 15px;
 	font-size: 20px;
+	width: 120px;
 }
 .profilep .namep button{
 	margin-bottom: 15px;
@@ -65,13 +78,16 @@
 	border-radius: 7px;
 }
 .profileinfo .flex{
-	padding-bottom: 21px;
+	padding-bottom: 40px;
 }
-.profileinfo span{
+.profileinfo .span2{
 	margin-left: 50px;
 }
+.sexual {
+	height: 49px;
+}
 .profileinfo span label{
-	margin-top: 20px;
+/*	margin-top: 20px;*/
 	border: 1px solid #343b4d;
 	text-align: center;
 	vertical-align: middle;

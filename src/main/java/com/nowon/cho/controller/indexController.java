@@ -64,4 +64,9 @@ public class indexController {
         model.addAttribute("inputValue", inputValue);
         return "/sub/result";
     }
+    @GetMapping("/payment")
+    public String payment() {
+    	return "/sub/payment";
+    }
+    
 }
